@@ -55,27 +55,27 @@
       <circle cx="222" cy="146" r="6" fill="#c0392b"/>
       <text x="238" y="150" fill="#1b2437" font-weight="600">Cost fairness</text>
       <rect x="352" y="142" width="88" height="7" rx="3.5" fill="#e2e6ed"/>
-      <rect x="352" y="142" width="72" height="7" rx="3.5" fill="#c0392b" opacity=".75"/>
+      <rect x="352" y="142" width="16" height="7" rx="3.5" fill="#c0392b" opacity=".85"/>
       <!-- row 2 -->
       <circle cx="222" cy="180" r="6" fill="#c0392b"/>
       <text x="238" y="184" fill="#1b2437" font-weight="600">Security posture</text>
       <rect x="352" y="176" width="88" height="7" rx="3.5" fill="#e2e6ed"/>
-      <rect x="352" y="176" width="64" height="7" rx="3.5" fill="#c0392b" opacity=".75"/>
+      <rect x="352" y="176" width="24" height="7" rx="3.5" fill="#c0392b" opacity=".85"/>
       <!-- row 3 -->
       <circle cx="222" cy="214" r="6" fill="#c0392b"/>
       <text x="238" y="218" fill="#1b2437" font-weight="600">Backup proof</text>
       <rect x="352" y="210" width="88" height="7" rx="3.5" fill="#e2e6ed"/>
-      <rect x="352" y="210" width="78" height="7" rx="3.5" fill="#c0392b" opacity=".75"/>
+      <rect x="352" y="210" width="10" height="7" rx="3.5" fill="#c0392b" opacity=".85"/>
       <!-- row 4 -->
       <circle cx="222" cy="248" r="6" fill="#d99512"/>
       <text x="238" y="252" fill="#1b2437" font-weight="600">Licensing</text>
       <rect x="352" y="244" width="88" height="7" rx="3.5" fill="#e2e6ed"/>
-      <rect x="352" y="244" width="44" height="7" rx="3.5" fill="#d99512" opacity=".8"/>
+      <rect x="352" y="244" width="48" height="7" rx="3.5" fill="#d99512" opacity=".9"/>
       <!-- row 5 -->
       <circle cx="222" cy="282" r="6" fill="#17a08c"/>
       <text x="238" y="286" fill="#1b2437" font-weight="600">Response time</text>
       <rect x="352" y="278" width="88" height="7" rx="3.5" fill="#e2e6ed"/>
-      <rect x="352" y="278" width="20" height="7" rx="3.5" fill="#17a08c" opacity=".8"/>
+      <rect x="352" y="278" width="66" height="7" rx="3.5" fill="#17a08c" opacity=".9"/>
     </g>
 
     <!-- divider -->
