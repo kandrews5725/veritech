@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — VeriTech Advisors</title>
+<meta name="description" content="Request an unbiased review of your MSP relationship. Flat fee, no obligation, no products. New England based.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/mark.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-hero { background: linear-gradient(160deg, var(--navy), #0f1c31); color: var(--white); padding: 72px 0 80px; text-align: center; }
+.page-hero h1 { color: var(--white); font-size: clamp(2.2rem, 4.5vw, 3.3rem); }
+.page-hero p { color: rgba(255,255,255,.82); font-size: 1.18rem; max-width: 600px; margin: 20px auto 0; }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+
+.contact-info h2 { font-size: 1.7rem; margin-bottom: 16px; }
+.contact-info p { color: var(--muted); font-size: 1.04rem; margin-bottom: 26px; }
+.info-list { list-style: none; }
+.info-list li { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: flex-start; }
+.info-list .ic { width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px; background: var(--teal-soft); color: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+.info-list .t { font-weight: 600; color: var(--navy); font-size: .96rem; }
+.info-list .d { font-size: .94rem; color: var(--muted); }
+
+.expect { background: var(--teal-soft); border-radius: 12px; padding: 24px 26px; margin-top: 28px; }
+.expect h3 { font-size: 1.1rem; margin-bottom: 12px; font-family: var(--font-body); font-weight: 700; }
+.expect ul { list-style: none; }
+.expect li { padding: 6px 0 6px 26px; position: relative; font-size: .95rem; color: var(--navy); }
+.expect li::before { content: '✓'; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+
+.form-card { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 38px 36px; box-shadow: var(--shadow-md); }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-size: .9rem; font-weight: 600; color: var(--navy); margin-bottom: 7px; }
+.field input, .field textarea, .field select {
+  width: 100%; padding: 13px 15px; font-size: 1rem; font-family: var(--font-body);
+  border: 1.5px solid var(--line); border-radius: 8px; background: var(--sand);
+  color: var(--ink); transition: border-color .2s, background .2s;
+}
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none; border-color: var(--teal); background: var(--white);
+  box-shadow: 0 0 0 3px rgba(26,138,156,.12);
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-note { font-size: .84rem; color: var(--muted); margin-top: 4px; }
+.form-msg { display: none; padding: 16px; border-radius: 8px; background: var(--teal-soft); color: var(--navy); font-size: .96rem; margin-bottom: 18px; }
+.form-msg.show { display: block; }
+
+@media (max-width: 860px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="VeriTech Advisors"></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="sample-report.html">Sample Report</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Get a Second Opinion</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>Get a second opinion</h1>
+    <p>Tell us a little about your business and your current MSP relationship. We'll get back to you to talk through whether a review makes sense — no pressure, no obligation.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+
+    <div class="contact-info">
+      <h2>Let's talk</h2>
+      <p>The best time to review your MSP relationship is before your next renewal — but any time works. Reach out and we'll take it from there.</p>
+
+      <ul class="info-list">
+        <li>
+          <div class="ic">✉️</div>
+          <div>
+            <div class="t">Email</div>
+            <div class="d">hello@veritechadvisors.com</div>
+          </div>
+        </li>
+        <li>
+          <div class="ic">📍</div>
+          <div>
+            <div class="t">Based in</div>
+            <div class="d">Maine · Serving New England</div>
+          </div>
+        </li>
+        <li>
+          <div class="ic">🕑</div>
+          <div>
+            <div class="t">Response time</div>
+            <div class="d">Usually within one business day</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="expect">
+        <h3>What to expect</h3>
+        <ul>
+          <li>A no-pressure conversation, not a sales call</li>
+          <li>An honest take on whether a review would help you</li>
+          <li>Clear, flat-fee pricing before anything begins</li>
+          <li>No obligation to go any further</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-msg" id="formMsg">Thanks — your message is ready to send. (This demo form doesn't transmit yet; connect it to your email or a form service to go live.)</div>
+      <form id="contactForm" onsubmit="return handleSubmit(event)">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="size">Company size</label>
+            <select id="size" name="size">
+              <option value="">Select…</option>
+              <option>Under 20 employees</option>
+              <option>20–50 employees</option>
+              <option>50–100 employees</option>
+              <option>Over 100 employees</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" placeholder="Tell us about your current MSP, what's prompting the outreach, and any renewal timing…" required></textarea>
+          <p class="form-note">The more context you share, the more useful our first conversation will be.</p>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/logo-light.png" alt="VeriTech Advisors"></div>
+        <p class="footer-note">Unbiased IT advisory for small and mid-sized businesses. We're not an MSP, we sell no products, and we take no vendor commissions. New England based.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="sample-report.html">Sample Report</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="contact.html">Request a review</a></li>
+          <li><a href="sample-report.html">See a sample report</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VeriTech Advisors. All rights reserved.</span>
+      <span>We verify. You decide.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('formMsg').classList.add('show');
+  document.getElementById('formMsg').scrollIntoView({behavior:'smooth', block:'center'});
+  return false;
+}
+</script>
+</body>
+</html>

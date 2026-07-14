@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VeriTech Advisors — Unbiased IT Advisory</title>
+<meta name="description" content="An unbiased, third-party review of your MSP relationship. We're not an MSP and we sell no products — just an honest answer on what your IT should really cost. New England based.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/mark.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+.hero {
+  background:
+    radial-gradient(1100px 620px at 80% -10%, rgba(34,184,159,.20), transparent 60%),
+    linear-gradient(160deg, var(--navy) 0%, var(--navy-800) 55%, #10193a 100%);
+  color: var(--white); padding: 100px 0 110px; position: relative; overflow: hidden;
+}
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+.hero-inner { max-width: 640px; }
+.hero-visual { display: flex; justify-content: center; align-items: center; }
+.hero-visual img { width: 100%; max-width: 480px; height: auto; }
+.hero h1 { color: var(--white); font-size: clamp(2.4rem, 5vw, 3.9rem); line-height: 1.06; letter-spacing: -.02em; }
+.hero h1 .accent { color: var(--teal-bright); font-style: italic; }
+.hero-lead { font-size: 1.19rem; color: rgba(255,255,255,.82); margin: 26px 0 34px; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: rgba(34,184,159,.13); border: 1px solid rgba(34,184,159,.34);
+  color: var(--teal-bright); padding: 7px 15px; border-radius: 100px;
+  font-size: .82rem; font-weight: 600; margin-bottom: 26px;
+}
+.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-bright); }
+
+.contrast-strip { background: var(--navy); color: var(--white); }
+.contrast-strip .wrap { display: grid; grid-template-columns: 1fr 1fr; }
+.contrast-col { padding: 40px 44px; }
+.contrast-col:first-child { border-right: 1px solid rgba(255,255,255,.12); }
+.contrast-col h3 { color: var(--white); font-size: 1.05rem; margin-bottom: 14px; font-family: var(--font-body); font-weight: 700; }
+.contrast-col.them h3 { color: rgba(255,255,255,.55); }
+.contrast-col ul { list-style: none; }
+.contrast-col li { padding: 7px 0 7px 26px; position: relative; font-size: .98rem; color: rgba(255,255,255,.78); }
+.contrast-col.them li { color: rgba(255,255,255,.5); }
+.contrast-col.us li::before { content: '✓'; position: absolute; left: 0; color: var(--teal-bright); font-weight: 700; }
+.contrast-col.them li::before { content: '✕'; position: absolute; left: 0; color: rgba(255,255,255,.32); font-weight: 700; }
+
+.props { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 52px; }
+.prop { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 28px 24px; box-shadow: var(--shadow-sm); }
+.prop .num { font-family: var(--font-display); font-size: 2.1rem; color: var(--teal); line-height: 1; }
+.prop h3 { font-size: 1.08rem; margin: 12px 0 6px; font-family: var(--font-body); font-weight: 700; }
+.prop p { font-size: .93rem; color: var(--muted); }
+
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 54px; }
+.step { padding: 34px 28px; background: var(--white); border-radius: 10px; border: 1px solid var(--line); box-shadow: var(--shadow-sm); text-align: left; }
+.step-mark { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--white); background: var(--teal); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+.step:nth-child(2) .step-mark { background: var(--navy-700); }
+.step:nth-child(3) .step-mark { background: var(--navy); }
+.step h3 { font-size: 1.32rem; margin-bottom: 10px; }
+.step p { color: var(--muted); font-size: .97rem; }
+
+.indep { background: linear-gradient(135deg, var(--teal-soft), #f3faf8); }
+.indep-inner { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; align-items: center; }
+.indep blockquote { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.05rem); color: var(--navy); line-height: 1.3; font-weight: 500; }
+.indep blockquote .hl { color: var(--teal); }
+.pledge { list-style: none; }
+.pledge li { padding: 14px 0 14px 34px; position: relative; border-bottom: 1px solid rgba(23,160,140,.16); font-size: 1.02rem; }
+.pledge li:last-child { border-bottom: 0; }
+.pledge li::before { content: '✓'; position: absolute; left: 4px; color: var(--teal); font-weight: 700; }
+
+.fit { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 48px; text-align: left; }
+.fit-card { padding: 26px; border-radius: 10px; border: 1px solid var(--line); background: var(--white); }
+.fit-card h3 { font-size: 1.06rem; font-family: var(--font-body); font-weight: 700; margin-bottom: 6px; }
+.fit-card p { font-size: .93rem; color: var(--muted); }
+
+.cta-band { background: linear-gradient(160deg, var(--navy), #10193a); color: var(--white); text-align: center; }
+.cta-band h2 { color: var(--white); font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
+.cta-band p { color: rgba(255,255,255,.8); font-size: 1.15rem; max-width: 560px; margin: 18px auto 32px; }
+
+@media (max-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+  .hero-visual { order: -1; }
+  .hero-visual img { max-width: 330px; }
+  .contrast-strip .wrap { grid-template-columns: 1fr; }
+  .contrast-col:first-child { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .props { grid-template-columns: 1fr 1fr; }
+  .process-grid, .fit { grid-template-columns: 1fr; }
+  .indep-inner { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 480px) { .props { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="VeriTech Advisors"></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navlinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="sample-report.html">Sample Report</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Get a Second Opinion</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-inner">
+      <span class="hero-badge"><span class="dot"></span> Unbiased · Not an MSP · No products sold</span>
+      <h1>Before you renew your MSP contract, get a <span class="accent">second opinion.</span></h1>
+      <p class="hero-lead">We're not a managed service provider. We verify what your MSP is actually doing, tell you what it should really cost, and help you bring the right work in-house. We have nothing to sell you but the truth.</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary">Request a Review</a>
+        <a href="sample-report.html" class="btn btn-ghost">See a Sample Report</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/hero.svg" alt="An MSP invoice being reviewed and verified, showing projected savings">
+    </div>
+  </div>
+</section>
+
+<section class="contrast-strip">
+  <div class="wrap">
+    <div class="contrast-col them">
+      <h3>A Managed Service Provider</h3>
+      <ul>
+        <li>Recommends the products they resell — at their markup</li>
+        <li>Earns more the more of your IT they manage</li>
+        <li>Builds your environment so you stay dependent on them</li>
+        <li>Their "free audit" is a pitch to win your account</li>
+      </ul>
+    </div>
+    <div class="contrast-col us">
+      <h3>VeriTech Advisors</h3>
+      <ul>
+        <li>Recommends what fits your business — you buy direct from the vendor</li>
+        <li>Takes no commissions and sells no products</li>
+        <li>Builds capability so you're never locked in</li>
+        <li>A flat-fee review that serves you, not a sales funnel</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap center">
+    <span class="eyebrow">Why businesses call us</span>
+    <h2 class="section-title">Reduce your dependence. Keep the control.</h2>
+    <p class="section-lead">Most small businesses signed with an MSP because they didn't know how to manage IT themselves — and have no way to know, years later, whether that's still the right deal. We give you that answer.</p>
+    <div class="props">
+      <div class="prop reveal"><div class="num">01</div><h3>More control</h3><p>Understand and own your own IT environment instead of being locked out of it.</p></div>
+      <div class="prop reveal"><div class="num">02</div><h3>Better quality</h3><p>The right tools, configured correctly — not a one-size-fits-all provider stack.</p></div>
+      <div class="prop reveal"><div class="num">03</div><h3>Faster response</h3><p>Handle routine work in-house instead of waiting in an MSP ticket queue.</p></div>
+      <div class="prop reveal"><div class="num">04</div><h3>Lower cost</h3><p>Stop paying premium rates for work your own team can do after proper setup.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--sand-deep);">
+  <div class="wrap center">
+    <span class="eyebrow">How it works</span>
+    <h2 class="section-title">Review. Refine. Rebuild.</h2>
+    <p class="section-lead">A clear path from <em>not knowing whether your IT spend is fair</em> to <em>running a right-sized operation you understand.</em> Not everyone needs all three — you go as far as your business actually requires, and we tell you honestly when you don't need the next step.</p>
+    <div class="process-grid">
+      <div class="step reveal">
+        <div class="step-mark">1</div>
+        <h3>Review</h3>
+        <p>A third-party audit of your MSP relationship — spend, contracts, tickets, licensing, security, and backups. A plain-language report on what's fair, what's wasteful, and what's missing.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-mark">2</div>
+        <h3>Refine</h3>
+        <p>Clear recommendations on what to keep, right-size, renegotiate, or bring in-house — and whether to stay with your MSP, change providers, or reduce the relationship.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-mark">3</div>
+        <h3>Rebuild</h3>
+        <p>Optional hands-on modernization — cloud-first migration, proper tooling, and training your team to run the day-to-day. Built so you own it, not so you depend on us.</p>
+      </div>
+    </div>
+    <div style="margin-top:44px;"><a href="services.html" class="btn btn-navy">Explore the full services</a></div>
+  </div>
+</section>
+
+<section class="section indep">
+  <div class="wrap indep-inner">
+    <blockquote>We don't sell you the product that fits our business model. We help you find the <span class="hl">right product for your business.</span></blockquote>
+    <ul class="pledge">
+      <li>We sell no products — you buy direct from the vendor.</li>
+      <li>We take no vendor commissions or reseller margin.</li>
+      <li>Our review fee doesn't change based on what we find.</li>
+      <li>We're not an MSP — and we're not trying to become yours.</li>
+      <li>Everything we produce is yours, to use with anyone.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap center">
+    <span class="eyebrow">Who we work with</span>
+    <h2 class="section-title">Built for growing New England businesses</h2>
+    <p class="section-lead">Small and mid-sized companies that rely on an MSP, and are ready to find out whether that relationship still fits.</p>
+    <div class="fit">
+      <div class="fit-card reveal">
+        <h3>20–100 employees</h3>
+        <p>Big enough to have real IT needs, small enough that an MSP contract may be doing more — and costing more — than it should.</p>
+      </div>
+      <div class="fit-card reveal">
+        <h3>Little or no internal IT</h3>
+        <p>You have an MSP and maybe one generalist in-house — but no one whose job is to independently judge whether you're getting a fair deal.</p>
+      </div>
+      <div class="fit-card reveal">
+        <h3>Running on Microsoft 365</h3>
+        <p>We specialize in the Microsoft ecosystem — Entra ID, Intune, Autopilot, and M365 Backup. Bonus if you're still on aging on-prem systems and want a modern, cloud-first setup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band">
+  <div class="wrap">
+    <h2>Find out what your IT should really cost.</h2>
+    <p>A flat-fee, unbiased review — no obligation, no products, no sales funnel. Just an honest answer before your next renewal.</p>
+    <a href="contact.html" class="btn btn-primary">Get a Second Opinion</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/logo-light.png" alt="VeriTech Advisors"></div>
+        <p class="footer-note">Unbiased IT advisory for small and mid-sized businesses. We're not an MSP, we sell no products, and we take no vendor commissions. New England based.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="sample-report.html">Sample Report</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="contact.html">Request a review</a></li>
+          <li><a href="sample-report.html">See a sample report</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VeriTech Advisors. All rights reserved.</span>
+      <span>We verify. You decide.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

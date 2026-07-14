@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Report — VeriTech Advisors</title>
+<meta name="description" content="See exactly what a VeriTech Advisors MSP Review looks like: a scored report of findings, recommendations, and your options — with no obligation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/mark.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-hero { background: linear-gradient(160deg, var(--navy), #0f1c31); color: var(--white); padding: 72px 0 80px; text-align: center; }
+.page-hero h1 { color: var(--white); font-size: clamp(2.2rem, 4.5vw, 3.3rem); }
+.page-hero p { color: rgba(255,255,255,.82); font-size: 1.18rem; max-width: 640px; margin: 20px auto 0; }
+
+.report {
+  max-width: 900px; margin: -48px auto 0; background: var(--white);
+  border-radius: 14px; box-shadow: var(--shadow-lg);
+  overflow: hidden; position: relative; z-index: 5;
+}
+.report-banner {
+  background: var(--teal-soft); border-bottom: 1px solid var(--line);
+  padding: 14px 40px; font-size: .88rem; color: var(--navy); text-align: center;
+}
+.report-banner strong { color: var(--teal); }
+.report-inner { padding: 44px 48px; }
+
+.report-head { display: flex; align-items: center; gap: 16px; border-bottom: 2px solid var(--navy); padding-bottom: 22px; margin-bottom: 30px; }
+.report-head img { height: 54px; }
+.report-head .report-title { margin-left: auto; text-align: right; }
+.report-head h2 { font-size: 1.5rem; margin: 0; }
+.report-head .sub { font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); }
+
+.snapshot { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-bottom: 34px; }
+.snapshot .row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.snapshot .row span:first-child { color: var(--muted); }
+.snapshot .row span:last-child { font-weight: 600; color: var(--navy); text-align: right; }
+
+.assess { background: var(--sand); border-radius: 10px; padding: 24px 26px; margin-bottom: 34px; }
+.assess .spend { font-family: var(--font-display); font-size: 1.5rem; color: var(--danger); margin-bottom: 10px; }
+.assess p { font-size: .98rem; margin-bottom: 10px; }
+.assess p:last-child { margin-bottom: 0; }
+.assess strong { color: var(--navy); }
+
+h3.block { font-size: 1.35rem; margin: 38px 0 18px; padding-top: 8px; }
+
+/* scorecard */
+.scorecard { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.sc-row { display: grid; grid-template-columns: 190px 60px 1fr; align-items: center; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.sc-row:last-child { border-bottom: 0; }
+.sc-row .cat { font-weight: 600; color: var(--navy); }
+.sc-row .sum { color: var(--muted); }
+.dot { width: 16px; height: 16px; border-radius: 50%; display: inline-block; }
+.dot.red { background: var(--danger); }
+.dot.yellow { background: var(--warn); }
+.dot.green { background: var(--good); }
+
+/* findings */
+.finding { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.finding:last-child { border-bottom: 0; }
+.finding h4 { font-size: 1.1rem; color: var(--navy); margin-bottom: 8px; display: flex; gap: 10px; align-items: baseline; }
+.finding h4 .n { color: var(--teal); font-family: var(--font-display); }
+.finding p { font-size: .96rem; color: var(--ink); margin: 0; }
+
+/* recommendations table */
+.rec-table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+.rec-table th { text-align: left; background: var(--navy); color: #fff; padding: 12px 16px; font-family: var(--font-body); font-weight: 600; font-size: .82rem; letter-spacing: .04em; }
+.rec-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.rec-table tr:nth-child(even) td { background: var(--sand); }
+.rec-note { font-size: .86rem; color: var(--muted); font-style: italic; margin-top: 14px; }
+
+/* financials */
+.fin-table { width: 100%; border-collapse: collapse; font-size: .96rem; margin-top: 6px; }
+.fin-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.fin-table td:last-child, .fin-table td:nth-child(2) { text-align: right; font-variant-numeric: tabular-nums; }
+.fin-table .total td { font-weight: 700; color: var(--navy); border-top: 2px solid var(--navy); border-bottom: 0; }
+.fin-table .save td { color: var(--good); font-weight: 700; font-size: 1.05rem; }
+
+/* options */
+.opt-list { list-style: none; margin-top: 8px; }
+.opt-list li { padding: 16px 0 16px 44px; position: relative; border-bottom: 1px solid var(--line); }
+.opt-list li:last-child { border-bottom: 0; }
+.opt-list .oi { position: absolute; left: 0; top: 14px; width: 30px; height: 30px; border-radius: 50%; background: var(--teal-soft); color: var(--teal); display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-display); }
+.opt-list strong { color: var(--navy); }
+.no-oblig { background: var(--teal-soft); border-radius: 10px; padding: 18px 22px; margin-top: 22px; font-size: .96rem; color: var(--navy); }
+
+@media (max-width: 720px) {
+  .report-head { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .report-head .report-title { margin-left: 0; text-align: left; }
+  .report-inner { padding: 30px 22px; }
+  .snapshot { grid-template-columns: 1fr; gap: 0; }
+  .sc-row { grid-template-columns: 1fr 30px; grid-template-areas: 'cat dot' 'sum sum'; gap: 6px 10px; }
+  .sc-row .cat { grid-area: cat; } .sc-row .dot-wrap { grid-area: dot; } .sc-row .sum { grid-area: sum; }
+  .rec-table, .rec-table tbody, .rec-table tr, .rec-table td { display: block; width: 100%; }
+  .rec-table thead { display: none; }
+  .rec-table tr { margin-bottom: 14px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .rec-table td { border-bottom: 1px solid var(--line); }
+  .rec-table td:first-child { background: var(--navy); color: #fff; font-weight: 600; }
+  .rec-table tr:nth-child(even) td:first-child { background: var(--navy); }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="VeriTech Advisors"></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="sample-report.html" class="active">Sample Report</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Get a Second Opinion</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>See exactly what you get</h1>
+    <p>No mystery, no black box. Here's a real example of a VeriTech Advisors MSP Review — the same format every client receives.</p>
+  </div>
+</section>
+
+<div class="report">
+  <div class="report-banner">
+    <strong>Sample report.</strong> An anonymized composite ("Coastal Cabinetry &amp; Millwork") for illustration. Every real review is specific to your environment.
+  </div>
+  <div class="report-inner">
+
+    <div class="report-head">
+      <img src="assets/logo.png" alt="VeriTech Advisors">
+      <div class="report-title">
+        <div class="sub">MSP Relationship Review</div>
+        <h2>Coastal Cabinetry &amp; Millwork</h2>
+      </div>
+    </div>
+
+    <!-- SNAPSHOT -->
+    <div class="snapshot">
+      <div class="row"><span>Industry</span><span>Custom manufacturing</span></div>
+      <div class="row"><span>Employees</span><span>45</span></div>
+      <div class="row"><span>Internal IT</span><span>One part-time generalist</span></div>
+      <div class="row"><span>Current MSP</span><span>6 years, never re-bid</span></div>
+      <div class="row"><span>Platform</span><span>Microsoft 365 Business Standard</span></div>
+      <div class="row"><span>Review trigger</span><span>Renewal in 90 days</span></div>
+    </div>
+
+    <!-- ASSESSMENT -->
+    <div class="assess">
+      <div class="spend">Current MSP spend: $4,200/mo · $50,400/yr</div>
+      <p>Coastal is paying a premium, security-tier price for what is largely basic support work, while several genuine security and continuity gaps go unaddressed. You are <strong>over-served on routine tasks</strong> and <strong>under-served on the protections that matter</strong> — a common pattern in long-tenured, never-re-bid contracts.</p>
+      <p><strong>Bottom line:</strong> Significant savings and a stronger security posture are both achievable — not by cutting corners, but by right-sizing what you outsource and correcting what's missing.</p>
+    </div>
+
+    <!-- SCORECARD -->
+    <h3 class="block">Scorecard</h3>
+    <div class="scorecard">
+      <div class="sc-row"><span class="cat">Cost fairness</span><span class="dot-wrap"><span class="dot red"></span></span><span class="sum">Paying security-tier rates for basic support work</span></div>
+      <div class="sc-row"><span class="cat">Security posture</span><span class="dot-wrap"><span class="dot red"></span></span><span class="sum">No Intune, no Conditional Access, no real EDR; MFA gaps</span></div>
+      <div class="sc-row"><span class="cat">Backup &amp; continuity</span><span class="dot-wrap"><span class="dot red"></span></span><span class="sum">"Backup" is default sync — no true backup; no restore proof</span></div>
+      <div class="sc-row"><span class="cat">Licensing alignment</span><span class="dot-wrap"><span class="dot yellow"></span></span><span class="sum">Missing security features Premium would provide</span></div>
+      <div class="sc-row"><span class="cat">Docs &amp; ownership</span><span class="dot-wrap"><span class="dot red"></span></span><span class="sum">No docs; access left active after a termination</span></div>
+      <div class="sc-row"><span class="cat">Support responsiveness</span><span class="dot-wrap"><span class="dot green"></span></span><span class="sum">Response times are acceptable and within SLA</span></div>
+    </div>
+
+    <!-- FINDINGS -->
+    <h3 class="block">Key findings</h3>
+    <div class="finding">
+      <h4><span class="n">01</span> You're paying security-tier rates for basic support</h4>
+      <p>Twelve months of tickets are mostly password resets, printer issues, and new-employee setup — routine Tier 1 work — yet the contract is priced and marketed as "24/7 monitoring and security."</p>
+    </div>
+    <div class="finding">
+      <h4><span class="n">02</span> The security you're paying for isn't fully there</h4>
+      <p>On Business Standard, the environment lacks Intune, Conditional Access, and Defender for Business. There's no true EDR, and MFA isn't enforced on all accounts. Marketed protection and deployed protection don't match.</p>
+    </div>
+    <div class="finding">
+      <h4><span class="n">03</span> Your "backup" is not a backup</h4>
+      <p>The MSP bills $600/month for "backup and DR," but it's default OneDrive sync — no point-in-time recovery, no protection from mass deletion. We asked the provider to demonstrate a restore; they could not produce evidence any restore test had ever been performed.</p>
+    </div>
+    <div class="finding">
+      <h4><span class="n">04</span> Offboarding gaps create real exposure</h4>
+      <p>No documented offboarding process. A terminated employee's account was found still active three weeks after their last day — a live security and licensing exposure.</p>
+    </div>
+    <div class="finding">
+      <h4><span class="n">05</span> You don't fully own your own environment</h4>
+      <p>Documentation and admin credentials live with the MSP, not with you. If the relationship changed tomorrow, transition would be difficult and dependent on the outgoing provider's cooperation.</p>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+    <h3 class="block">Recommendations</h3>
+    <table class="rec-table">
+      <thead><tr><th>Finding</th><th>Recommendation</th></tr></thead>
+      <tbody>
+        <tr><td>Tier 1 work at premium rates</td><td>Bring routine tasks in-house after proper setup</td></tr>
+        <tr><td>Security gap</td><td>Upgrade to M365 Business Premium — unlocks Intune, Conditional Access, Defender</td></tr>
+        <tr><td>"Backup" isn't real</td><td>Move to true tenant-level backup; require your provider to prove restores</td></tr>
+        <tr><td>No EDR</td><td>Deploy &amp; tune EDR; keep alert monitoring with a specialist (Tier 3)</td></tr>
+        <tr><td>Offboarding exposure</td><td>Build documented onboarding / offboarding checklists</td></tr>
+        <tr><td>No ownership</td><td>Take ownership of documentation, credentials, and asset inventory</td></tr>
+        <tr><td>Relationship oversized</td><td>Right-size MSP to security/EDR monitoring only</td></tr>
+      </tbody>
+    </table>
+    <p class="rec-note">All recommended products are purchased by the client direct from the vendor. VeriTech Advisors takes no commission or reseller margin on any recommendation.</p>
+
+    <!-- FINANCIALS -->
+    <h3 class="block">The financial picture</h3>
+    <table class="fin-table">
+      <tr><td>Current MSP spend</td><td>$4,200/mo</td><td>$50,400/yr</td></tr>
+      <tr><td>Right-sized MSP (security/EDR only)</td><td>~$1,350/mo</td><td>~$16,200/yr</td></tr>
+      <tr><td>Optional advisory retainer</td><td>~$300/mo</td><td>~$3,600/yr</td></tr>
+      <tr class="total"><td>Projected ongoing spend</td><td>~$1,650/mo</td><td>~$19,800/yr</td></tr>
+      <tr class="save"><td>Projected annual savings (year 2+)</td><td></td><td>~$30,600/yr</td></tr>
+    </table>
+    <p class="rec-note">Plus a one-time modernization investment to reach this state. Internal time to manage the right-sized day-to-day: roughly 3–6 hrs/week of existing staff — no new hire required.</p>
+
+    <!-- OPTIONS -->
+    <h3 class="block">Your options from here</h3>
+    <ul class="opt-list">
+      <li><span class="oi">1</span><strong>Do it yourself.</strong> Take this report and implement the recommendations with your own team or your current MSP.</li>
+      <li><span class="oi">2</span><strong>Renegotiate.</strong> We help you bring these evidence-backed findings to your MSP to right-size the contract.</li>
+      <li><span class="oi">3</span><strong>Modernize with us.</strong> We implement the recommendations, train your team, and right-size the MSP relationship — built for you to own.</li>
+    </ul>
+    <div class="no-oblig">
+      There is no obligation to choose any option involving VeriTech Advisors. This report is yours to use however serves your business best.
+    </div>
+
+  </div>
+</div>
+
+<section class="section" style="text-align:center;">
+  <div class="wrap">
+    <h2 class="section-title">Want one of these for your business?</h2>
+    <p class="section-lead center" style="margin:16px auto 28px;">A flat-fee, unbiased review of your MSP relationship — with a report just like this one.</p>
+    <a href="contact.html" class="btn btn-primary">Request a Review</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/logo-light.png" alt="VeriTech Advisors"></div>
+        <p class="footer-note">Unbiased IT advisory for small and mid-sized businesses. We're not an MSP, we sell no products, and we take no vendor commissions. New England based.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="sample-report.html">Sample Report</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="contact.html">Request a review</a></li>
+          <li><a href="sample-report.html">See a sample report</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VeriTech Advisors. All rights reserved.</span>
+      <span>We verify. You decide.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
