@@ -68,6 +68,12 @@
 .tier ul { list-style: none; }
 .tier li { font-size: .92rem; padding: 5px 0 5px 20px; position: relative; color: var(--ink); }
 .tier li::before { content: '•'; position: absolute; left: 4px; color: var(--muted); }
+.tier li em { color: var(--muted); font-size: .88rem; }
+.tier .t3-note { font-size: .86rem; color: var(--muted); margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); line-height: 1.55; }
+.finding-box { background: var(--teal-soft); border-left: 3px solid var(--teal); border-radius: 0 10px 10px 0; padding: 26px 30px; margin: 40px auto 0; max-width: 780px; text-align: left; }
+.finding-box h3 { font-size: 1.2rem; margin-bottom: 12px; }
+.finding-box p { font-size: 1rem; color: var(--ink); margin-bottom: 12px; }
+.finding-box p:last-child { margin-bottom: 0; }
 
 @media (max-width: 860px) {
   .svc { grid-template-columns: 1fr; gap: 18px; }
@@ -264,42 +270,58 @@
   <div class="wrap center">
     <span class="eyebrow">The framework behind it</span>
     <h2 class="section-title">What your team can own — and what shouldn't move</h2>
-    <p class="section-lead">After a proper setup, most day-to-day IT can be handled by an existing staff member against clear runbooks — no new hire needed. We sort every function into three tiers.</p>
+    <p class="section-lead">After a proper setup, most day-to-day IT can be handled by an existing staff member against clear runbooks — no new hire needed. We sort every function into three tiers. <strong>This is a map of where work should sit — not a pitch for who should do it.</strong> Filling each slot is your decision.</p>
     <div class="tiers" style="text-align:left;">
       <div class="tier t1">
         <h3>Tier 1 · Bring in-house</h3>
-        <p class="who">~3–6 hrs/week for a 40–80 person company</p>
+        <p class="who">Routine, runbook-driven work. Roughly 3–6 hrs/week for a 40–80 person company — absorbable by existing staff, no new hire.</p>
         <ul>
-          <li>Patch / RMM dashboard monitoring</li>
+          <li>Patch and RMM dashboard monitoring</li>
           <li>Backup job monitoring</li>
-          <li>Phishing / awareness campaigns</li>
-          <li>Basic help desk (resets, lockouts)</li>
-          <li>Onboarding / offboarding</li>
-          <li>License &amp; mailbox admin</li>
-          <li>Vendor / renewal tracking</li>
+          <li>Phishing simulation and awareness campaigns</li>
+          <li>Basic help desk — password resets, lockouts, printers</li>
+          <li>Onboarding and offboarding execution</li>
+          <li>License and mailbox administration</li>
+          <li>Asset inventory and vendor renewal tracking</li>
+          <li>Documentation upkeep</li>
         </ul>
       </div>
       <div class="tier t2">
-        <h3>Tier 2 · Hybrid</h3>
-        <p class="who">Internal day-to-day, specialist check-in</p>
+        <h3>Tier 2 · Co-managed</h3>
+        <p class="who">Your team watches it day to day, with a specialist behind them for the judgment calls. That specialist could be your current MSP, a different one, or us — your choice.</p>
         <ul>
-          <li>Network dashboard monitoring</li>
-          <li>Access reviews against policy</li>
-          <li>Compliance policy monitoring</li>
+          <li>Network and firewall monitoring — <em>you watch, we make the changes</em></li>
+          <li>Access reviews and privilege audits</li>
+          <li>Conditional access exceptions against a documented policy</li>
+          <li>Device compliance monitoring and remediation</li>
+          <li>Escalations that exceed the runbook</li>
+          <li>Evaluating new software or tools before you buy</li>
+          <li>Vendor contract renewals and negotiation support</li>
+          <li>Quarterly security posture review</li>
+          <li>Cyber insurance questionnaires and attestations</li>
         </ul>
       </div>
       <div class="tier t3">
         <h3>Tier 3 · Stays specialized</h3>
-        <p class="who">Not brought in-house — for good reason</p>
+        <p class="who">Speed-critical or high-consequence. This should stay with a specialist — whether that's your MSP, a dedicated security provider, or us. We'll tell you plainly what shouldn't move in-house.</p>
         <ul>
-          <li>EDR alert triage &amp; incident response</li>
-          <li>Security architecture &amp; policy design</li>
-          <li>Initial system configuration</li>
-          <li>Breach / incident coordination</li>
+          <li>EDR alert triage and 24/7 threat monitoring</li>
+          <li>Active incident response and breach coordination</li>
+          <li>Disaster recovery execution</li>
+          <li>Security architecture and policy design</li>
+          <li>Identity and access architecture</li>
+          <li>Forensics, legal, and insurance coordination after an incident</li>
         </ul>
+        <p class="t3-note">Ransomware moves in minutes. A part-time internal person checking a dashboard "when they get to it" is a real gap — and many cyber insurance policies now require 24/7 monitoring as a condition of coverage.</p>
       </div>
     </div>
-    <p class="section-lead center" style="margin:36px auto 0;">The review finds where your spend sits across these tiers. The rebuild fixes the mismatch. You keep only Tier 3 under specialized coverage — <strong>which is where most of the savings come from.</strong> An MSP charges premium, all-inclusive rates for Tier 1 work your own staff can handle in a few hours a week. Stop paying for that, and the numbers move fast.</p>
+    <p class="section-lead center" style="margin:36px auto 0;">The review finds where your spend sits across these tiers. Most of the savings come from Tier 1 — <strong>an MSP charges premium, all-inclusive rates for routine work your own staff can handle in a few hours a week.</strong> Stop paying for that, and the numbers move fast.</p>
+
+    <div class="finding-box">
+      <h3>One thing worth knowing up front</h3>
+      <p><strong>Not every MSP will work this way.</strong> Some are all-or-nothing — their pricing model depends on managing your full stack, and they won't support a co-managed arrangement where your team owns Tier 1 and 2.</p>
+      <p>If that's your provider, that itself is a finding. It doesn't mean you're stuck; it means your MSP's model doesn't fit your business — and there are plenty of providers who <em>do</em> work co-managed. Knowing that before you renew is exactly the point.</p>
+    </div>
   </div>
 </section>
 
