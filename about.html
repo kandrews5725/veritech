@@ -58,9 +58,17 @@
 .cred p { font-size: .92rem; color: var(--muted); margin: 8px 0 0; }
 
 .pledge2 { list-style: none; margin: 24px 0; }
-.pledge2 li { padding: 16px 0 16px 40px; position: relative; border-bottom: 1px solid var(--line); font-size: 1.04rem; }
+.pledge2 li {
+  padding: 16px 0 16px 42px; position: relative;
+  border-bottom: 1px solid var(--line); font-size: 1.04rem;
+}
 .pledge2 li:last-child { border-bottom: 0; }
-.pledge2 li::before { content: '⚓'; position: absolute; left: 6px; }
+.pledge2 li::before {
+  content: ''; position: absolute; left: 0; top: 18px;
+  width: 24px; height: 24px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2317a08c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12.5 L9.5 18 L20 5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-size: contain;
+}
 .pledge2 strong { color: var(--navy); }
 
 @media (max-width: 720px) { .creds { grid-template-columns: 1fr; } }
@@ -122,7 +130,7 @@
     <p>The goal isn't total independence for its own sake — it's <strong>the right level of dependence, chosen deliberately instead of by default.</strong> More control, better quality, faster response — and, in most cases, substantially lower cost. Not because we cut corners, but because an MSP charges premium rates for work that doesn't need them.</p>
 
     <h2>Built from the inside</h2>
-    <p>This business comes from the other side of the table. Twenty-five-plus years managing IT across the private and public sector — including running internal IT and managing MSP relationships from within growing companies, and modernizing environments from legacy on-prem systems to a secure, cloud-first setup.</p>
+    <p>This business comes from the other side of the table. Twenty-five-plus years managing IT across the private and public sector — including running internal IT and managing MSP relationships from within a growing company, and modernizing environments from legacy on-prem systems to a secure, cloud-first setup.</p>
 
     <div class="creds">
       <div class="cred"><div class="n">25+</div><p>Years in IT across multiple industries</p></div>
