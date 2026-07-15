@@ -15,7 +15,7 @@
   background:
     radial-gradient(1100px 620px at 80% -10%, rgba(34,184,159,.20), transparent 60%),
     linear-gradient(160deg, var(--navy) 0%, var(--navy-800) 55%, #10193a 100%);
-  color: var(--white); padding: 100px 0 110px; position: relative; overflow: hidden;
+  color: var(--white); padding: 64px 0 72px; position: relative; overflow: hidden;
 }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 40px; align-items: center; }
 .hero-inner { max-width: none; }
@@ -23,7 +23,7 @@
 .hero-visual img { width: 100%; max-width: 430px; height: auto; }
 .hero h1 {
   color: var(--white);
-  font-size: clamp(2.4rem, 5vw, 3.9rem);
+  font-size: clamp(2.2rem, 4.6vw, 3.5rem);
   line-height: 1.06;
   letter-spacing: -.02em;
   text-wrap: balance;
@@ -34,8 +34,18 @@
   line-height: 1.12;
   margin-top: .38em;
 }
+.hero h1 .accent-kicker {
+  display: block;
+  font-size: .5em;
+  font-style: normal;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: .01em;
+  margin-top: .5em;
+}
 .hero h1 .accent { color: var(--teal-bright); font-style: italic; }
-.hero-lead { font-size: 1.19rem; color: rgba(255,255,255,.82); margin: 26px 0 34px; max-width: 620px; }
+.hero-lead { font-size: 1.15rem; color: rgba(255,255,255,.82); margin: 22px 0 30px; max-width: 620px; }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 9px;
@@ -135,7 +145,7 @@
   <div class="wrap hero-grid">
     <div class="hero-inner">
       <span class="hero-badge"><span class="dot"></span> Vendor-neutral · No commissions · Not an MSP</span>
-      <h1>Get an unbiased review of your MSP relationship.<br><span class="accent">Most businesses outsource more than they need to.</span></h1>
+      <h1>Get an unbiased review of your MSP relationship.<br><span class="accent">Most businesses outsource more than they need to.</span><span class="accent-kicker">Yours might too.</span></h1>
       <p class="hero-lead">We're not a managed service provider. We assess what your MSP actually delivers, what your business actually needs, and where the two don't match. You get a plain-language report and a clear set of options, with no products to sell you and no stake in what you decide. Sometimes the honest answer is: don't change a thing.</p>
       <div class="hero-cta">
         <a href="contact.html" class="btn btn-primary">Request a Review</a>
