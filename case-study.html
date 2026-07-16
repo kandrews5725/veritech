@@ -60,6 +60,23 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
 .dot.yellow { background: var(--warn); }
 .dot.green { background: var(--good); }
 
+/* phase headers (Review / Refine / Rebuild) */
+.phase-head { display: flex; align-items: center; gap: 16px; margin: 44px 0 4px; }
+.phase-head:first-of-type { margin-top: 8px; }
+.phase-num { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--font-display); font-size: 1.25rem; flex-shrink: 0; }
+.phase-num.p1 { background: var(--teal); }
+.phase-num.p2 { background: var(--navy-700); }
+.phase-num.p3 { background: var(--navy); }
+.phase-kicker { display: block; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 2px; }
+.phase-title { font-size: 1.55rem; margin: 0; }
+.phase-lead { font-size: .96rem; color: var(--muted); margin: 12px 0 18px; }
+
+.phase-list { list-style: none; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.phase-list li { padding: 13px 20px 13px 44px; position: relative; font-size: .95rem; border-bottom: 1px solid var(--line); }
+.phase-list li:last-child { border-bottom: 0; }
+.phase-list li:nth-child(even) { background: var(--sand); }
+.phase-list li::before { content: '✓'; position: absolute; left: 18px; color: var(--teal); font-weight: 700; }
+
 /* findings */
 .finding { padding: 20px 0; border-bottom: 1px solid var(--line); }
 .finding:last-child { border-bottom: 0; }
@@ -68,10 +85,6 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
 .finding p { font-size: .96rem; color: var(--ink); margin: 0; }
 
 /* recommendations table */
-.rec-table { width: 100%; border-collapse: collapse; font-size: .93rem; }
-.rec-table th { text-align: left; background: var(--navy); color: #fff; padding: 12px 16px; font-family: var(--font-body); font-weight: 600; font-size: .82rem; letter-spacing: .04em; }
-.rec-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
-.rec-table tr:nth-child(even) td { background: var(--sand); }
 .rec-note { font-size: .86rem; color: var(--muted); font-style: italic; margin-top: 14px; }
 
 /* financials */
@@ -101,12 +114,6 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
   .snapshot { grid-template-columns: 1fr; gap: 0; }
   .sc-row { grid-template-columns: 1fr 30px; grid-template-areas: 'cat dot' 'sum sum'; gap: 6px 10px; }
   .sc-row .cat { grid-area: cat; } .sc-row .dot-wrap { grid-area: dot; } .sc-row .sum { grid-area: sum; }
-  .rec-table, .rec-table tbody, .rec-table tr, .rec-table td { display: block; width: 100%; }
-  .rec-table thead { display: none; }
-  .rec-table tr { margin-bottom: 14px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-  .rec-table td { border-bottom: 1px solid var(--line); }
-  .rec-table td:first-child { background: var(--navy); color: #fff; font-weight: 600; }
-  .rec-table tr:nth-child(even) td:first-child { background: var(--navy); }
 }
 </style>
 </head>
@@ -132,7 +139,7 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
   <div class="wrap">
     <h1>A real MSP relationship,<br>reviewed and right&#8209;sized</h1>
     <p>This is a real engagement — real contract, real numbers — showing what a VeriTech-style Review, Refine, and Rebuild actually produces.</p>
-    <div class="result-line">Managed IT contract cut from <strong>$58,453/yr to $12,588/yr</strong> · <strong>~$64,655/yr</strong> in total net savings</div>
+    <div class="result-line">Managed IT contract cut from <strong>$58,453/yr to $12,588/yr</strong> · <strong>~$71,255/yr</strong> in total net savings</div>
   </div>
 </section>
 
@@ -171,6 +178,16 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
       <p>That one internal role was the hinge the entire review turned on. Even without it, the honest recommendation wouldn't have been to simply shop for a cheaper MSP — it would have been to reduce MSP dependency by identifying and training an internal champion to absorb part of the day-to-day, paired with right-sizing the MSP's scope and bridging the rest directly through <a href="services.html#concierge">IT Concierge</a>. With the internal role already in place here, the real question became: <strong>which parts of this contract does that role need the MSP for at all?</strong></p>
     </div>
 
+    <!-- REVIEW PHASE -->
+    <div class="phase-head">
+      <span class="phase-num p1">1</span>
+      <div>
+        <span class="phase-kicker">Phase one</span>
+        <h2 class="phase-title">Review</h2>
+      </div>
+    </div>
+    <p class="phase-lead">An unbiased audit of the existing MSP relationship — what the contract covered, what the business actually needed, and where the two didn't match.</p>
+
     <!-- SCORECARD -->
     <h3 class="block">Scorecard</h3>
     <p class="block-lead">Seven dimensions every MSP relationship can be measured against — regardless of provider, industry, or contract size.</p>
@@ -206,21 +223,46 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
       <h4><span class="n">05</span> The contract had never been re-bid or re-scoped</h4>
       <p>The relationship had run for years on renewal-by-default. Nothing in the contract had been re-evaluated against what the business actually needed at its current size and internal capacity.</p>
     </div>
+    <div class="finding">
+      <h4><span class="n">06</span> An aging on-prem server was quietly heading toward a forced replacement</h4>
+      <p>The physical domain controller and file server were both nearing end of life. The MSP's next recommendation would have been a new physical server, new VMware licensing, and folding the replacement into the monthly maintenance agreement — all to keep running services Microsoft 365 already provided at no additional cost.</p>
+    </div>
 
-    <!-- RECOMMENDATIONS -->
-    <h3 class="block">Recommendations</h3>
-    <table class="rec-table">
-      <thead><tr><th>Finding</th><th>Recommendation</th></tr></thead>
-      <tbody>
-        <tr><td>Full managed scope, underused internal capacity</td><td>Train the internal role and bring help desk, RMM, and patching in-house</td></tr>
-        <tr><td>Duplicate identity tooling</td><td>Retire the standalone identity provider; consolidate on Microsoft 365 Entra ID</td></tr>
-        <tr><td>Four overlapping management tools</td><td>Consolidate device and endpoint management into a single RMM platform</td></tr>
-        <tr><td>Monitoring outsourced by default</td><td>Bring monitoring and patch management internal; retain EDR alerting only</td></tr>
-        <tr><td>Legacy phone system</td><td>Move to Microsoft Teams Phone using licensing already owned</td></tr>
-        <tr><td>Unreconciled licensing</td><td>Audit and right-size license tiers against actual per-user need</td></tr>
-        <tr><td>Contract never re-scoped</td><td>Right-size the MSP relationship to backup and specialist oversight only</td></tr>
-      </tbody>
-    </table>
+    <!-- REFINE PHASE -->
+    <div class="phase-head">
+      <span class="phase-num p2">2</span>
+      <div>
+        <span class="phase-kicker">Phase two</span>
+        <h2 class="phase-title">Refine</h2>
+      </div>
+    </div>
+    <p class="phase-lead">With the review's findings in hand, the internal role took over what it could reasonably run directly, and the subscriptions and tools that weren't earning their keep were cut.</p>
+    <ul class="phase-list">
+      <li>Trained the internal role to run help desk, RMM, and patching directly</li>
+      <li>Ended the unused Okta subscription — purchased for SSO, never implemented</li>
+      <li>Consolidated four device and endpoint tools into one platform (NinjaOne)</li>
+      <li>Brought monitoring and patch management in-house; retained EDR alerting (SentinelOne)</li>
+      <li>Moved the phone system to Microsoft Teams</li>
+      <li>Audited and right-sized license tiers to actual usage</li>
+      <li>Right-sized the MSP relationship down to backup and specialist oversight only</li>
+    </ul>
+
+    <!-- REBUILD PHASE -->
+    <div class="phase-head">
+      <span class="phase-num p3">3</span>
+      <div>
+        <span class="phase-kicker">Phase three</span>
+        <h2 class="phase-title">Rebuild</h2>
+      </div>
+    </div>
+    <p class="phase-lead">The remaining piece was infrastructure: an aging on-prem server nearing a forced replacement, retired in favor of the cloud-native platform already included in the business's Microsoft 365 licensing.</p>
+    <ul class="phase-list">
+      <li>Retired the physical domain controller and file server before a forced hardware refresh</li>
+      <li>Migrated file storage to SharePoint — already included in existing Microsoft 365 licensing</li>
+      <li>Moved user and device identity and management from the on-prem domain controller to Entra ID</li>
+      <li>Rolled out modern device provisioning with Autopilot and Intune</li>
+      <li>Enrolled previously unmanaged iOS/iPadOS devices through Apple Business Manager</li>
+    </ul>
     <p class="rec-note">All recommended products and platforms are purchased by the client direct from the vendor. VeriTech Advisors takes no commission or reseller margin on any recommendation.</p>
 
     <!-- FINANCIALS -->
@@ -230,16 +272,16 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
       <tr><td>MSP relationship, right-sized to backup-only</td><td>~$1,049/mo</td><td>~$12,588/yr</td></tr>
       <tr class="total"><td>Cut from the MSP relationship alone</td><td></td><td>~$45,865/yr</td></tr>
       <tr class="sub"><td colspan="3">Plus environment optimization: retiring the standalone identity provider, consolidating four management tools into one, moving the phone system to Teams, and cleaning up license tiers.</td></tr>
-      <tr class="save"><td>Total net annual savings</td><td></td><td>~$64,655/yr</td></tr>
+      <tr class="sub"><td colspan="3">Plus retiring the on-prem domain controller and file server before a forced replacement — avoiding the ongoing maintenance a new server would have added to the MSP agreement.</td></tr>
+      <tr class="save"><td>Total net annual savings</td><td></td><td>~$71,255/yr</td></tr>
     </table>
-    <p class="rec-note">~$40,812/yr from unwinding MSP-billed services (help desk, monitoring, RMM, patching, email security, EDR) and ~$23,843/yr from environment optimization.</p>
+    <p class="rec-note">~$40,812/yr from unwinding MSP-billed services (help desk, monitoring, RMM, patching, email security, EDR), ~$23,843/yr from environment optimization, and ~$6,600/yr from avoiding new server maintenance after migrating file storage to SharePoint and identity to Entra ID.</p>
+    <p class="rec-note">On top of the annual figure, retiring the server also avoided a one-time capital cost of <strong>~$17,250</strong> — the new physical server, VMware licensing, Windows Server licensing, and MSP labor a replacement project would have required.</p>
 
     <!-- WHAT HAPPENED NEXT -->
     <h3 class="block">What happened next</h3>
     <div class="next-box">
-      <p>The findings weren't left as a snapshot. Over the following months, the internal IT role was equipped and trained on the platforms that replaced the MSP's tools — identity, device management, endpoint monitoring, and patching moved in-house one function at a time, rather than all at once.</p>
-      <p><strong>The MSP relationship wasn't eliminated — it was right-sized.</strong> Backup and specialist EDR oversight stayed with an outside provider; everything the internal role could reasonably own, it took on directly.</p>
-      <p>Same seat, same salary line — expanded capability. No new hire was required to absorb the work the MSP had been billing for at premium rates.</p>
+      <p><strong>The MSP relationship wasn't eliminated — it was right-sized.</strong> Backup and specialist EDR oversight stayed with an outside provider; everything else moved in-house, one phase at a time, on the same seat and same salary line already in place. No new hire was required to absorb work the MSP had been billing for at premium rates.</p>
     </div>
 
     <!-- CONCIERGE BRIDGE -->
