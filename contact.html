@@ -48,6 +48,8 @@
 .form-note { font-size: .84rem; color: var(--muted); margin-top: 4px; }
 .form-msg { display: none; padding: 16px; border-radius: 8px; background: var(--teal-soft); color: var(--navy); font-size: .96rem; margin-bottom: 18px; }
 .form-msg.show { display: block; }
+.form-msg.error { background: #fdecec; color: #a02525; }
+.btn[disabled] { opacity: .6; cursor: not-allowed; }
 
 @media (max-width: 860px) {
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -92,7 +94,7 @@
           <div class="ic">✉️</div>
           <div>
             <div class="t">Email</div>
-            <div class="d">hello@veritechadvisors.com</div>
+            <div class="d">info@veritechadvisors.com</div>
           </div>
         </li>
         <li>
@@ -123,8 +125,8 @@
     </div>
 
     <div class="form-card">
-      <div class="form-msg" id="formMsg">Thanks — your message is ready to send. (This demo form doesn't transmit yet; connect it to your email or a form service to go live.)</div>
-      <form id="contactForm" onsubmit="return handleSubmit(event)">
+      <div class="form-msg" id="formMsg"></div>
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <div class="form-row">
           <div class="field">
             <label for="name">Name</label>
@@ -157,7 +159,14 @@
           <textarea id="message" name="message" placeholder="Tell us about your current MSP, what's prompting the outreach, and any renewal timing…" required></textarea>
           <p class="form-note">The more context you share, the more useful our first conversation will be.</p>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;">Send message</button>
+
+        <!-- Formspree spam honeypot: bots fill this in, humans don't. Keep it hidden. -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <!-- Fixed subject line for the notification email -->
+        <input type="hidden" name="_subject" value="New inquiry — VeriTech Advisors site">
+
+        <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;">Send message</button>
       </form>
     </div>
 
@@ -197,12 +206,47 @@
 </footer>
 
 <script>
-function handleSubmit(e){
+const contactForm = document.getElementById('contactForm');
+const formMsg = document.getElementById('formMsg');
+const submitBtn = document.getElementById('submitBtn');
+
+contactForm.addEventListener('submit', async function (e) {
   e.preventDefault();
-  document.getElementById('formMsg').classList.add('show');
-  document.getElementById('formMsg').scrollIntoView({behavior:'smooth', block:'center'});
-  return false;
-}
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  const data = new FormData(contactForm);
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      formMsg.textContent = "Thanks — your message is on its way. We'll be in touch within one business day.";
+      formMsg.classList.remove('error');
+      formMsg.classList.add('show');
+      contactForm.reset();
+    } else {
+      const result = await response.json().catch(() => null);
+      const detail = result && result.errors && result.errors.length
+        ? result.errors.map(err => err.message).join(', ')
+        : 'Something went wrong. Please try again or email us directly.';
+      formMsg.textContent = detail;
+      formMsg.classList.add('error', 'show');
+    }
+  } catch (err) {
+    formMsg.textContent = "Something went wrong sending your message. Please try again or email us directly at info@veritechadvisors.com.";
+    formMsg.classList.add('error', 'show');
+  }
+
+  formMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Send message';
+});
 </script>
 </body>
 </html>
