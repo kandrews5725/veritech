@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — VeriTech Advisors</title>
+<meta name="description" content="A real example: how a New England construction firm cut its managed IT contract from $58,000 a year to backup-only, and brought the day-to-day in-house.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/mark.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-hero { background: linear-gradient(160deg, var(--navy), #0f1c31); color: var(--white); padding: 72px 0 80px; text-align: center; }
+.page-hero h1 { color: var(--white); font-size: clamp(2.2rem, 4.5vw, 3.3rem); }
+.page-hero p { color: rgba(255,255,255,.82); font-size: 1.18rem; max-width: 660px; margin: 20px auto 0; }
+.page-hero .result-line { display: inline-block; margin-top: 22px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 10px 22px; font-size: .95rem; color: var(--white); }
+.page-hero .result-line strong { color: var(--teal-bright); }
+
+.report {
+  max-width: 900px; margin: -48px auto 0; background: var(--white);
+  border-radius: 14px; box-shadow: var(--shadow-lg);
+  overflow: hidden; position: relative; z-index: 5;
+}
+.report-banner {
+  background: var(--teal-soft); border-bottom: 1px solid var(--line);
+  padding: 14px 40px; font-size: .88rem; color: var(--navy); text-align: center;
+}
+.report-banner strong { color: var(--teal); }
+.report-inner { padding: 44px 48px; }
+
+.report-head { display: flex; align-items: center; gap: 16px; border-bottom: 2px solid var(--navy); padding-bottom: 22px; margin-bottom: 30px; }
+.report-head img { height: 54px; }
+.report-head .report-title { margin-left: auto; text-align: right; }
+.report-head h2 { font-size: 1.5rem; margin: 0; }
+.report-head .sub { font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); }
+
+.snapshot { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-bottom: 34px; }
+.snapshot .row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.snapshot .row span:first-child { color: var(--muted); }
+.snapshot .row span:last-child { font-weight: 600; color: var(--navy); text-align: right; }
+
+.assess { background: var(--sand); border-radius: 10px; padding: 24px 26px; margin-bottom: 34px; }
+.assess .spend { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy); margin-bottom: 10px; }
+.assess p { font-size: .98rem; margin-bottom: 10px; }
+.assess p:last-child { margin-bottom: 0; }
+.assess strong { color: var(--navy); }
+
+h3.block { font-size: 1.35rem; margin: 38px 0 18px; padding-top: 8px; }
+p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
+
+/* scorecard */
+.scorecard { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.sc-row { display: grid; grid-template-columns: 190px 60px 1fr; align-items: center; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.sc-row:last-child { border-bottom: 0; }
+.sc-row .cat { font-weight: 600; color: var(--navy); }
+.sc-row .sum { color: var(--muted); }
+.dot { width: 16px; height: 16px; border-radius: 50%; display: inline-block; }
+.dot.red { background: var(--danger); }
+.dot.yellow { background: var(--warn); }
+.dot.green { background: var(--good); }
+
+/* findings */
+.finding { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.finding:last-child { border-bottom: 0; }
+.finding h4 { font-size: 1.1rem; color: var(--navy); margin-bottom: 8px; display: flex; gap: 10px; align-items: baseline; }
+.finding h4 .n { color: var(--teal); font-family: var(--font-display); }
+.finding p { font-size: .96rem; color: var(--ink); margin: 0; }
+
+/* recommendations table */
+.rec-table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+.rec-table th { text-align: left; background: var(--navy); color: #fff; padding: 12px 16px; font-family: var(--font-body); font-weight: 600; font-size: .82rem; letter-spacing: .04em; }
+.rec-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.rec-table tr:nth-child(even) td { background: var(--sand); }
+.rec-note { font-size: .86rem; color: var(--muted); font-style: italic; margin-top: 14px; }
+
+/* financials */
+.fin-table { width: 100%; border-collapse: collapse; font-size: .96rem; margin-top: 6px; }
+.fin-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.fin-table td:last-child, .fin-table td:nth-child(2) { text-align: right; font-variant-numeric: tabular-nums; }
+.fin-table .total td { font-weight: 700; color: var(--navy); border-top: 2px solid var(--navy); border-bottom: 0; }
+.fin-table .save td { color: var(--good); font-weight: 700; font-size: 1.05rem; }
+.fin-table .sub td { color: var(--muted); font-size: .88rem; padding-top: 0; padding-bottom: 14px; border-bottom: 0; }
+
+/* what happened next */
+.next-box { border: 1px solid var(--line); border-radius: 10px; padding: 26px 28px; background: var(--sand); }
+.next-box p { font-size: .97rem; margin-bottom: 12px; }
+.next-box p:last-child { margin-bottom: 0; }
+.next-box strong { color: var(--navy); }
+
+/* honest disclosure */
+.disclosure { border: 1px dashed var(--line); border-radius: 10px; padding: 24px 26px; background: var(--white); }
+.disclosure .eyebrow { margin-bottom: 10px; }
+.disclosure p { font-size: .95rem; color: var(--ink); margin-bottom: 10px; }
+.disclosure p:last-child { margin-bottom: 0; }
+
+/* concierge bridge */
+.concierge-bridge { background: var(--teal-soft); border-radius: 10px; padding: 24px 26px; margin-top: 22px; }
+.concierge-bridge p { font-size: .96rem; color: var(--navy); margin-bottom: 10px; }
+.concierge-bridge p:last-child { margin-bottom: 0; }
+.concierge-bridge a { font-weight: 600; }
+
+@media (max-width: 720px) {
+  .report-head { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .report-head .report-title { margin-left: 0; text-align: left; }
+  .report-inner { padding: 30px 22px; }
+  .snapshot { grid-template-columns: 1fr; gap: 0; }
+  .sc-row { grid-template-columns: 1fr 30px; grid-template-areas: 'cat dot' 'sum sum'; gap: 6px 10px; }
+  .sc-row .cat { grid-area: cat; } .sc-row .dot-wrap { grid-area: dot; } .sc-row .sum { grid-area: sum; }
+  .rec-table, .rec-table tbody, .rec-table tr, .rec-table td { display: block; width: 100%; }
+  .rec-table thead { display: none; }
+  .rec-table tr { margin-bottom: 14px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .rec-table td { border-bottom: 1px solid var(--line); }
+  .rec-table td:first-child { background: var(--navy); color: #fff; font-weight: 600; }
+  .rec-table tr:nth-child(even) td:first-child { background: var(--navy); }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="VeriTech Advisors"></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="case-study.html" class="active">Case Study</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Get a Second Opinion</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>A real MSP relationship, reviewed and right-sized</h1>
+    <p>This is a real engagement — real contract, real numbers — showing what a VeriTech-style Review, Refine, and Rebuild actually produces.</p>
+    <div class="result-line">Managed IT contract cut from <strong>$58,453/yr to $12,588/yr</strong> · <strong>~$64,655/yr</strong> in total net savings, telecom excluded</div>
+  </div>
+</section>
+
+<div class="report">
+  <div class="report-banner">
+    <strong>Real engagement.</strong> Company name withheld at the client's request. All figures are drawn from signed contracts and internal spend records.
+  </div>
+  <div class="report-inner">
+
+    <!-- HEAD -->
+    <div class="report-head">
+      <img src="assets/mark.png" alt="">
+      <div>
+        <h2>MSP Relationship Review</h2>
+        <div class="sub">Case Study</div>
+      </div>
+      <div class="report-title">
+        <h2>New England Construction Firm</h2>
+        <div class="sub">100–150 employees</div>
+      </div>
+    </div>
+
+    <!-- SNAPSHOT -->
+    <div class="snapshot">
+      <div class="row"><span>Industry</span><span>Construction / defense-adjacent</span></div>
+      <div class="row"><span>Internal IT</span><span>One IT role, no dedicated team</span></div>
+      <div class="row"><span>Current MSP</span><span>Full managed contract, multi-year</span></div>
+      <div class="row"><span>Platform</span><span>Microsoft 365, on-prem &amp; cloud mix</span></div>
+      <div class="row"><span>Review trigger</span><span>Contract renewal</span></div>
+      <div class="row"><span>Compliance context</span><span>DFARS / CMMC obligations</span></div>
+    </div>
+
+    <!-- THE SITUATION -->
+    <div class="assess">
+      <div class="spend">The company was paying for a full team it didn't need — and had the internal capacity to prove it.</div>
+      <p>The business had <strong>one internal IT role</strong> and a <strong>fully managed MSP contract</strong> covering help desk, monitoring, patching, RMM, email security, and endpoint protection — priced and structured as if no internal IT capability existed at all.</p>
+      <p>That one internal role was the hinge the entire review turned on. Without any internal capacity, the honest recommendation might have been "switch to a cheaper MSP." With it, the real question became: <strong>which parts of this contract does the internal role need the MSP for at all?</strong></p>
+    </div>
+
+    <!-- SCORECARD -->
+    <h3 class="block">Scorecard</h3>
+    <p class="block-lead">Seven dimensions every MSP relationship can be measured against — regardless of provider, industry, or contract size.</p>
+    <div class="scorecard">
+      <div class="sc-row"><span class="cat">Service delivery</span><span class="dot-wrap"><span class="dot green"></span></span><span class="sum">Ticket response times were acceptable and within SLA</span></div>
+      <div class="sc-row"><span class="cat">Right-sized scope</span><span class="dot-wrap"><span class="dot red"></span></span><span class="sum">Full managed pricing for work the internal role could absorb</span></div>
+      <div class="sc-row"><span class="cat">Cost efficiency</span><span class="dot-wrap"><span class="dot red"></span></span><span class="sum">Premium per-seat rates layered on top of duplicate tooling</span></div>
+      <div class="sc-row"><span class="cat">Security &amp; compliance</span><span class="dot-wrap"><span class="dot yellow"></span></span><span class="sum">Baseline controls present; gaps in EDR consistency and CMMC alignment</span></div>
+      <div class="sc-row"><span class="cat">Data protection</span><span class="dot-wrap"><span class="dot yellow"></span></span><span class="sum">Backup existed but ownership and restore testing sat with the MSP</span></div>
+      <div class="sc-row"><span class="cat">Ownership &amp; lock-in</span><span class="dot-wrap"><span class="dot red"></span></span><span class="sum">Licensing, identity, and tooling decisions ran through the MSP by default</span></div>
+      <div class="sc-row"><span class="cat">Strategic alignment</span><span class="dot-wrap"><span class="dot red"></span></span><span class="sum">Contract renewed on autopilot; never re-scoped against actual internal capacity</span></div>
+    </div>
+
+    <!-- FINDINGS -->
+    <h3 class="block">Key findings</h3>
+    <div class="finding">
+      <h4><span class="n">01</span> The internal role had headroom the contract didn't account for</h4>
+      <p>The existing IT role had the capacity — and, with training, the platform depth — to run day-to-day identity, device, and endpoint management directly. The MSP contract assumed none of that capacity existed.</p>
+    </div>
+    <div class="finding">
+      <h4><span class="n">02</span> Overlapping tools were being paid for twice</h4>
+      <p>Identity and endpoint management ran through both the MSP's stack and separate standalone tools — including a dedicated identity provider layered on top of capability Microsoft 365 already licensed. Four separate management tools were doing work one platform could consolidate.</p>
+    </div>
+    <div class="finding">
+      <h4><span class="n">03</span> Monitoring and patching didn't need to be outsourced</h4>
+      <p>RMM, patch management, and endpoint monitoring — the bulk of the MSP's recurring bill — were functions a trained internal role could own directly, with EDR alerting kept as the one piece worth specialist attention.</p>
+    </div>
+    <div class="finding">
+      <h4><span class="n">04</span> The phone system and license mix hadn't been reviewed in years</h4>
+      <p>A legacy phone platform was still in place alongside Microsoft 365 licensing that already included the capability to replace it. License tiers across the user base hadn't been reconciled against actual usage.</p>
+    </div>
+    <div class="finding">
+      <h4><span class="n">05</span> The contract had never been re-bid or re-scoped</h4>
+      <p>The relationship had run for years on renewal-by-default. Nothing in the contract had been re-evaluated against what the business actually needed at its current size and internal capacity.</p>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+    <h3 class="block">Recommendations</h3>
+    <table class="rec-table">
+      <thead><tr><th>Finding</th><th>Recommendation</th></tr></thead>
+      <tbody>
+        <tr><td>Full managed scope, underused internal capacity</td><td>Train the internal role and bring help desk, RMM, and patching in-house</td></tr>
+        <tr><td>Duplicate identity tooling</td><td>Retire the standalone identity provider; consolidate on Microsoft 365 Entra ID</td></tr>
+        <tr><td>Four overlapping management tools</td><td>Consolidate device and endpoint management into a single RMM platform</td></tr>
+        <tr><td>Monitoring outsourced by default</td><td>Bring monitoring and patch management internal; retain EDR alerting only</td></tr>
+        <tr><td>Legacy phone system</td><td>Move to Microsoft Teams Phone using licensing already owned</td></tr>
+        <tr><td>Unreconciled licensing</td><td>Audit and right-size license tiers against actual per-user need</td></tr>
+        <tr><td>Contract never re-scoped</td><td>Right-size the MSP relationship to backup and specialist oversight only</td></tr>
+      </tbody>
+    </table>
+    <p class="rec-note">All recommended products and platforms are purchased by the client direct from the vendor. VeriTech Advisors takes no commission or reseller margin on any recommendation.</p>
+
+    <!-- FINANCIALS -->
+    <h3 class="block">The financial picture</h3>
+    <table class="fin-table">
+      <tr><td>MSP full managed contract (signed renewal)</td><td>$4,871/mo</td><td>$58,453/yr</td></tr>
+      <tr><td>MSP relationship, right-sized to backup-only</td><td>~$1,049/mo</td><td>~$12,588/yr</td></tr>
+      <tr class="total"><td>Cut from the MSP relationship alone</td><td></td><td>~$45,865/yr</td></tr>
+      <tr class="sub"><td colspan="3">Plus environment optimization: retiring the standalone identity provider, consolidating four management tools into one, moving the phone system to Teams, and cleaning up license tiers.</td></tr>
+      <tr class="save"><td>Total net annual savings (telecom excluded)</td><td></td><td>~$64,655/yr</td></tr>
+    </table>
+    <p class="rec-note">~$40,812/yr from unwinding MSP-billed services (help desk, monitoring, RMM, patching, email security, EDR) and ~$23,843/yr from environment optimization. Telecom cost changes are excluded so the figure reflects the IT environment only.</p>
+
+    <!-- WHAT HAPPENED NEXT -->
+    <h3 class="block">What happened next</h3>
+    <div class="next-box">
+      <p>The findings weren't left as a snapshot. Over the following months, the internal IT role was equipped and trained on the platforms that replaced the MSP's tools — identity, device management, endpoint monitoring, and patching moved in-house one function at a time, rather than all at once.</p>
+      <p><strong>The MSP relationship wasn't eliminated — it was right-sized.</strong> Backup and specialist EDR oversight stayed with an outside provider; everything the internal role could reasonably own, it took on directly.</p>
+      <p>Same seat, same salary line — expanded capability. No new hire was required to absorb the work the MSP had been billing for at premium rates.</p>
+    </div>
+
+    <!-- HONEST DISCLOSURE -->
+    <div class="disclosure" style="margin-top: 34px;">
+      <span class="eyebrow">The honest part</span>
+      <p>This engagement is where the VeriTech Advisors model comes from. The review, findings, and transition described above were carried out by VeriTech's founder — <strong>as the company's own IT Manager</strong>, not as an outside advisor.</p>
+      <p>That distinction matters, so we're stating it plainly: this case study demonstrates that the model works, using real numbers from a real environment. For a VeriTech client today, the same review and findings would be delivered by an outside advisor, with the transition led by training the client's own internal person — exactly as it was here.</p>
+    </div>
+
+    <!-- CONCIERGE BRIDGE -->
+    <div class="concierge-bridge">
+      <p><strong>No internal IT person to train?</strong> This model depends on having someone in-house to hand capability to. If that role doesn't exist yet, <a href="services.html#concierge">IT Concierge</a> is built to be that person on a fractional basis — same right-sizing outcome, without requiring a new hire first.</p>
+    </div>
+
+  </div>
+</div>
+
+<section class="section" style="text-align:center;">
+  <div class="wrap">
+    <h2 class="section-title">Want to know what your relationship would score?</h2>
+    <p class="section-lead center" style="margin:16px auto 28px;">A flat-fee, unbiased review of your MSP relationship — the same format shown above, built around your environment.</p>
+    <a href="contact.html" class="btn btn-primary">Request a Review</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/logo-light.png" alt="VeriTech Advisors"></div>
+        <p class="footer-note">Unbiased IT advisory for small and mid-sized businesses. We're not an MSP, we sell no products, and we take no vendor commissions. New England based.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-study.html">Case Study</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="contact.html">Request a review</a></li>
+          <li><a href="case-study.html">See a real case study</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VeriTech Advisors. All rights reserved.</span>
+      <span>We verify. You decide.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
