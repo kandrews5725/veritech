@@ -146,7 +146,7 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
 
 <div class="report">
   <div class="report-banner">
-    <strong>Real engagement.</strong> Company name withheld at the client's request. All figures are drawn from signed contracts, the proposed renewal quote, and internal spend records.
+    <strong>Real engagement.</strong> Company name withheld at the client's request. All figures are drawn from signed contracts and internal spend records.
   </div>
   <div class="report-inner">
 
@@ -220,8 +220,8 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
       <p>RMM, patch management, endpoint monitoring, and EDR — the bulk of the MSP's recurring bill — were functions a trained internal role could own directly.</p>
     </div>
     <div class="finding">
-      <h4><span class="n">04</span> The phone system and license mix hadn't been reviewed in years</h4>
-      <p>A legacy phone platform was still in place alongside Microsoft 365 licensing that already included the capability to replace it. License tiers across the user base hadn't been reconciled against actual usage.</p>
+      <h4><span class="n">04</span> The phone system and license procurement hadn't been reviewed in years</h4>
+      <p>A legacy phone platform was still in place alongside Microsoft 365 licensing that already included the capability to replace it. Licensing itself was being resold through the MSP — meaning every new hire or seat change ran through an MSP request instead of being provisioned directly. License tiers across the user base also hadn't been reconciled against actual usage.</p>
     </div>
     <div class="finding">
       <h4><span class="n">05</span> The contract had never been re-bid or re-scoped</h4>
@@ -246,6 +246,7 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
       <li>Ended the unused Okta subscription — purchased for SSO, never implemented</li>
       <li>Consolidated four device and endpoint tools into one platform (NinjaOne)</li>
       <li>Brought monitoring, patch management, and EDR fully in-house — RMM (NinjaOne) and endpoint detection and response (SentinelOne) integrated together, but kept as two separate platforms</li>
+      <li>Moved Microsoft 365 licensing off MSP resale onto direct CSP procurement (Dell) — new licenses no longer require an MSP request to provision</li>
       <li>Moved the phone system to Microsoft Teams</li>
       <li>Audited and right-sized license tiers to actual usage</li>
       <li>Right-sized the MSP relationship down to backup oversight only</li>
@@ -272,7 +273,7 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
     <!-- FINANCIALS -->
     <h3 class="block">The financial picture</h3>
     <table class="fin-table">
-      <tr><td>MSP full managed contract (proposed renewal)</td><td>$4,871/mo</td><td>$58,453/yr</td></tr>
+      <tr><td>MSP full managed contract (last signed rate)</td><td>$4,871/mo</td><td>$58,453/yr</td></tr>
       <tr><td>MSP relationship, right-sized to backup-only</td><td>~$1,049/mo</td><td>~$12,588/yr</td></tr>
       <tr class="total"><td>Cut from the MSP relationship alone</td><td></td><td>~$45,865/yr</td></tr>
       <tr class="sub"><td colspan="3">Plus environment optimization: retiring the standalone identity provider, consolidating four management tools into one, moving the phone system to Teams, and cleaning up license tiers.</td></tr>
@@ -281,6 +282,7 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
     </table>
     <p class="rec-note">~$40,812/yr from unwinding MSP-billed services (help desk, monitoring, RMM, patching, email security, EDR), ~$23,843/yr from environment optimization, and ~$6,600/yr from avoiding new server maintenance after migrating file storage to SharePoint and identity to Entra ID.</p>
     <p class="rec-note">On top of the annual figure, retiring the server also avoided a one-time capital cost of <strong>~$17,250</strong> — the new physical server, VMware licensing, Windows Server licensing, and MSP labor a replacement project would have required.</p>
+    <p class="rec-note">A 2025 renewal was never signed — the business right-sized before it came to that. The $58,453/yr figure is the last signed contract rate, used here as a conservative baseline; the actual renewal would likely have priced higher with inflation, meaning these savings understate the real number rather than inflate it.</p>
 
     <!-- WHAT HAPPENED NEXT -->
     <h3 class="block">What happened next</h3>
