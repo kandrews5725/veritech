@@ -89,6 +89,8 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
 .rec-note { font-size: .86rem; color: var(--muted); font-style: italic; margin-top: 14px; }
 
 /* financials */
+.fin-group-label { font-size: .78rem; letter-spacing: .09em; text-transform: uppercase; color: var(--teal); font-weight: 700; margin: 24px 0 6px; }
+.fin-group-label:first-of-type { margin-top: 10px; }
 .fin-table { width: 100%; border-collapse: collapse; font-size: .96rem; margin-top: 6px; }
 .fin-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); }
 .fin-table td:last-child, .fin-table td:nth-child(2) { text-align: right; font-variant-numeric: tabular-nums; }
@@ -272,17 +274,36 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
 
     <!-- FINANCIALS -->
     <h3 class="block">The financial picture</h3>
+    <p class="block-lead">Every figure below comes straight from the signed contract and internal spend records. Add up the line items and you'll land on the same total we did.</p>
+
+    <p class="fin-group-label">MSP relationship</p>
     <table class="fin-table">
-      <tr><td>MSP full managed contract (last signed rate)</td><td>$4,871/mo</td><td>$58,453/yr</td></tr>
-      <tr><td>MSP relationship, right-sized to backup-only</td><td>~$1,049/mo</td><td>~$12,588/yr</td></tr>
-      <tr class="total"><td>Cut from the MSP relationship alone</td><td></td><td>~$45,865/yr</td></tr>
-      <tr class="sub"><td colspan="3">Plus environment optimization: retiring the standalone identity provider, consolidating four management tools into one, moving the phone system to Teams, and cleaning up license tiers.</td></tr>
-      <tr class="sub"><td colspan="3">Plus retiring the on-prem domain controller and file server before a forced replacement — avoiding the ongoing maintenance a new server would have added to the MSP agreement.</td></tr>
-      <tr class="save"><td>Total net annual savings</td><td></td><td>~$71,255/yr</td></tr>
+      <tr><td>MSP full managed contract (last signed rate)</td><td>$4,871.09/mo</td><td>$58,453.08/yr</td></tr>
+      <tr><td>Less: M365 licensing — continues at comparable cost through a direct CSP, not counted as savings</td><td>−$1,612.50/mo</td><td>−$19,350.00/yr</td></tr>
+      <tr><td>Less: MSP relationship, right-sized to backup-only</td><td>−$688.50/mo</td><td>−$8,262.00/yr</td></tr>
+      <tr class="total"><td>Cut from the MSP relationship alone</td><td></td><td>$30,841.08/yr</td></tr>
     </table>
-    <p class="rec-note">~$40,812/yr from unwinding MSP-billed services (help desk, monitoring, RMM, patching, email security, EDR), ~$23,843/yr from environment optimization, and ~$6,600/yr from avoiding new server maintenance after migrating file storage to SharePoint and identity to Entra ID.</p>
-    <p class="rec-note">On top of the annual figure, retiring the server also avoided a one-time capital cost of <strong>~$17,250</strong> — the new physical server, VMware licensing, Windows Server licensing, and MSP labor a replacement project would have required.</p>
-    <p class="rec-note">A 2025 renewal was never signed — the business right-sized before it came to that. The $58,453/yr figure is the last signed contract rate, used here as a conservative baseline; the actual renewal would likely have priced higher with inflation, meaning these savings understate the real number rather than inflate it.</p>
+
+    <p class="fin-group-label">Environment optimization</p>
+    <table class="fin-table">
+      <tr><td>Legacy phone system consolidated onto Microsoft Teams Phone (net of new cost)</td><td>$11,762.68/yr</td></tr>
+      <tr><td>Device management and remote-support tools consolidated into a single platform</td><td>$7,530.00/yr</td></tr>
+      <tr><td>Redundant identity and access management tools eliminated</td><td>$17,208.00/yr</td></tr>
+      <tr><td>General software subscription cleanup</td><td>$911.00/yr</td></tr>
+      <tr><td>Less: new unified management platform subscription (added cost)</td><td>−$4,382.00/yr</td></tr>
+      <tr class="total"><td>Environment optimization subtotal</td><td>$33,029.68/yr</td></tr>
+    </table>
+
+    <p class="fin-group-label">Infrastructure</p>
+    <table class="fin-table">
+      <tr><td>Retiring the on-prem server before a forced replacement — avoided being locked into a new VMware subscription (minimum core commitment applies regardless of server size)</td><td>$3,600.00/yr</td></tr>
+    </table>
+
+    <table class="fin-table">
+      <tr class="save"><td>Total net annual savings</td><td>$30,841.08 + $33,029.68 + $3,600.00</td><td>$67,470.76/yr</td></tr>
+    </table>
+    <p class="rec-note">On top of the annual figure, retiring the server also avoided a one-time capital cost of <strong>~$9,500</strong> — the new physical server, Windows Server licensing, and MSP labor a replacement project would have required.</p>
+    <p class="rec-note">A renewal at the full managed rate was never signed — the business right-sized before it came to that. The contract figure above is the last signed rate, used here as a conservative baseline; a real renewal would likely have priced higher, meaning these savings understate the real number rather than inflate it. M365 licensing is treated as a wash throughout, since the same cost continues today through a direct CSP rather than disappearing.</p>
 
     <!-- WHAT HAPPENED NEXT -->
     <h3 class="block">What happened next</h3>
