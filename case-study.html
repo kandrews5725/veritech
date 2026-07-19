@@ -117,6 +117,11 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
   .snapshot { grid-template-columns: 1fr; gap: 0; }
   .sc-row { grid-template-columns: 1fr 30px; grid-template-areas: 'cat dot' 'sum sum'; gap: 6px 10px; }
   .sc-row .cat { grid-area: cat; } .sc-row .dot-wrap { grid-area: dot; } .sc-row .sum { grid-area: sum; }
+
+  .fin-table tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .fin-table td { display: inline; padding: 0 !important; border: 0 !important; text-align: left !important; }
+  .fin-table td:first-child { display: block; margin-bottom: 5px; }
+  .fin-table td:nth-child(2):not(:last-child)::after { content: '→'; font-weight: 400; color: var(--muted); margin: 0 6px; }
 }
 </style>
 </head>
