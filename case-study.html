@@ -122,7 +122,7 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
   .fin-table tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--line); }
   .fin-table td { display: inline; padding: 0 !important; border: 0 !important; text-align: left !important; }
   .fin-table td:first-child { display: block; margin-bottom: 5px; }
-  .fin-table td:nth-child(2):not(:last-child)::after { content: '·'; font-weight: 400; color: var(--muted); margin: 0 8px; }
+  .fin-table td:nth-child(2):not(:last-child):not(:empty)::after { content: '·'; font-weight: 400; color: var(--muted); margin: 0 8px; }
   .fin-table tr.save td:nth-child(2) { display: block; margin-bottom: 4px; }
   .fin-table tr.save td:nth-child(2)::after { content: none; }
 }
@@ -289,7 +289,7 @@ p.block-lead { font-size: .96rem; color: var(--muted); margin: -10px 0 18px; }
       <tr><td>MSP full managed contract (last signed rate)</td><td>$4,871.09/mo</td><td>$58,453.08/yr</td></tr>
       <tr><td>Less: M365 licensing — continues at comparable cost through a direct CSP, not counted as savings</td><td>−$1,612.50/mo</td><td>−$19,350.00/yr</td></tr>
       <tr><td>Less: MSP relationship, right-sized to backup-only</td><td>−$688.50/mo</td><td>−$8,262.00/yr</td></tr>
-      <tr class="total"><td>Cut from the MSP relationship alone</td><td>$30,841.08/yr</td></tr>
+      <tr class="total"><td>Cut from the MSP relationship alone</td><td></td><td>$30,841.08/yr</td></tr>
     </table>
 
     <p class="fin-group-label">Environment optimization</p>
