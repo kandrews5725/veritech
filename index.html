@@ -3,304 +3,392 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VeriTech Advisors — Unbiased IT Advisory</title>
-<meta name="description" content="An unbiased, third-party review of your MSP relationship. We're not an MSP and we sell no products — just an honest answer on whether your IT actually fits your business. New England based.">
+<title>Maine Foam Parties | Outdoor Foam Party Rentals in Maine</title>
+<meta name="description" content="Maine's foam party rental company. We bring the foam cannon, you bring the backyard. Safe, biodegradable, all-ages foamy fun across Maine.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="assets/mark.png">
-<link rel="stylesheet" href="styles.css">
-<style>
-.hero {
-  background:
-    radial-gradient(1100px 620px at 80% -10%, rgba(34,184,159,.20), transparent 60%),
-    linear-gradient(160deg, var(--navy) 0%, var(--navy-800) 55%, #10193a 100%);
-  color: var(--white); padding: 64px 0 72px; position: relative; overflow: hidden;
-}
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 460px; gap: 40px; align-items: center; }
-.hero-inner { max-width: none; }
-.hero-visual { display: flex; justify-content: center; align-items: center; }
-.hero-visual img { width: 100%; max-width: 500px; height: auto; }
-.hero h1 {
-  color: var(--white);
-  font-size: clamp(2rem, 4vw, 3.05rem);
-  line-height: 1.06;
-  letter-spacing: -.02em;
-  text-wrap: balance;
-}
-.hero h1 .accent {
-  display: block;
-  font-size: .78em;
-  line-height: 1.12;
-  margin-top: .38em;
-}
-.hero h1 .accent-kicker {
-  display: block;
-  font-size: .78em;
-  font-style: italic;
-  color: var(--teal-bright);
-  letter-spacing: .01em;
-  margin-top: .5em;
-}
-.hero h1 .accent { color: var(--teal-bright); font-style: italic; }
-.hero-lead { font-size: 1.15rem; color: rgba(255,255,255,.82); margin: 22px 0 30px; max-width: 620px; }
-.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 9px;
-  background: rgba(34,184,159,.13); border: 1px solid rgba(34,184,159,.34);
-  color: var(--teal-bright); padding: 7px 15px; border-radius: 100px;
-  font-size: .82rem; font-weight: 600; margin-bottom: 26px;
-}
-
-.contrast-strip { background: var(--navy); color: var(--white); }
-.contrast-strip .wrap { display: grid; grid-template-columns: 1fr 1fr; }
-.contrast-col { padding: 40px 44px; }
-.contrast-col:first-child { border-right: 1px solid rgba(255,255,255,.12); }
-.contrast-col h3 { color: var(--white); font-size: 1.05rem; margin-bottom: 14px; font-family: var(--font-body); font-weight: 700; }
-.contrast-col.them h3 { color: rgba(255,255,255,.55); }
-.contrast-col ul { list-style: none; }
-.contrast-col li { padding: 7px 0 7px 26px; position: relative; font-size: .98rem; color: rgba(255,255,255,.78); }
-.contrast-col.them li { color: rgba(255,255,255,.5); }
-.contrast-col.us li::before { content: '✓'; position: absolute; left: 0; color: var(--teal-bright); font-weight: 700; }
-.contrast-col.them li::before { content: '✕'; position: absolute; left: 0; color: rgba(255,255,255,.32); font-weight: 700; }
-
-.props { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 52px; }
-.prop { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 28px 24px; box-shadow: var(--shadow-sm); }
-.prop .num { font-family: var(--font-display); font-size: 2.1rem; color: var(--teal); line-height: 1; }
-.prop h3 { font-size: 1.08rem; margin: 12px 0 6px; font-family: var(--font-body); font-weight: 700; }
-.prop p { font-size: .93rem; color: var(--muted); }
-
-.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 54px; }
-.step { padding: 34px 28px; background: var(--white); border-radius: 10px; border: 1px solid var(--line); box-shadow: var(--shadow-sm); text-align: left; }
-.step-mark { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--white); background: var(--teal); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
-.step:nth-child(2) .step-mark { background: var(--navy-700); }
-.step:nth-child(3) .step-mark { background: var(--navy); }
-.step h3 { font-size: 1.32rem; margin-bottom: 10px; }
-.step p { color: var(--muted); font-size: .97rem; }
-
-.indep { background: linear-gradient(135deg, var(--teal-soft), #f3faf8); }
-.indep-inner { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; align-items: center; }
-.indep blockquote { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.05rem); color: var(--navy); line-height: 1.3; font-weight: 500; }
-.indep blockquote .hl { color: var(--teal); }
-.pledge { list-style: none; }
-.pledge li { padding: 14px 0 14px 38px; position: relative; border-bottom: 1px solid rgba(23,160,140,.16); font-size: 1.02rem; }
-.pledge li:last-child { border-bottom: 0; }
-.pledge li::before {
-  content: ''; position: absolute; left: 0; top: 17px;
-  width: 22px; height: 22px;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2317a08c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12.5 L9.5 18 L20 5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-size: contain;
-}
-
-.fit { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 48px; text-align: left; }
-.fit-card { padding: 26px; border-radius: 10px; border: 1px solid var(--line); background: var(--white); }
-.fit-card h3 { font-size: 1.06rem; font-family: var(--font-body); font-weight: 700; margin-bottom: 6px; }
-.fit-card p { font-size: .93rem; color: var(--muted); }
-.fit-timing { max-width: 680px; margin: 34px auto 0; text-align: center; font-size: 1.04rem; color: var(--ink); }
-.fit-timing em { color: var(--teal); font-style: italic; }
-
-.cta-band { background: linear-gradient(160deg, var(--navy), #10193a); color: var(--white); text-align: center; }
-.cta-band h2 { color: var(--white); font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
-.cta-band p { color: rgba(255,255,255,.8); font-size: 1.15rem; max-width: 560px; margin: 18px auto 32px; }
-
-/* squeeze zone: shrink the visual so the headline keeps room */
-@media (max-width: 1080px) and (min-width: 881px) {
-  .hero-grid { grid-template-columns: minmax(0, 1fr) 340px; gap: 32px; }
-  .hero-visual img { max-width: 340px; }
-}
-
-@media (max-width: 880px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 44px; }
-  .hero-visual { order: -1; }
-  .hero-visual img { max-width: 380px; }
-  .contrast-strip .wrap { grid-template-columns: 1fr; }
-  .contrast-col:first-child { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
-  .props { grid-template-columns: 1fr 1fr; }
-  .process-grid, .fit { grid-template-columns: 1fr; }
-  .indep-inner { grid-template-columns: 1fr; gap: 28px; }
-}
-@media (max-width: 480px) { .props { grid-template-columns: 1fr; } }
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="site-header">
-  <div class="wrap nav">
-    <a href="index.html" class="brand"><img src="assets/logo.png" alt="VeriTech Advisors"></a>
-    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">
+  <div class="container nav" id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/Text_web.png" alt="Maine Foam Parties">
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="faq.html">Foam FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:2072138190" class="nav-phone">(207) 213-8190</a>
+      <a href="contact.html" class="btn btn-navy">Book Now</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <nav class="nav-links" id="navlinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="case-study.html">Case Study</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="nav-cta">Request a Review</a>
-    </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-inner">
-      <span class="hero-badge">Vendor-neutral · No commissions · Not an MSP</span>
-      <h1>Get an unbiased review of your MSP relationship.<br><span class="accent">Most businesses outsource more than they need to.</span><span class="accent-kicker">Yours might too&hellip;</span></h1>
-      <p class="hero-lead">We're not a managed service provider. We assess what your MSP actually delivers, what your business actually needs, and where the two don't match. You get a plain-language report and a clear set of options, with no products to sell you and no stake in what you decide. Sometimes the honest answer is: don't change a thing.</p>
-      <div class="hero-cta">
-        <a href="contact.html" class="btn btn-primary">Request a Review</a>
-        <a href="case-study.html" class="btn btn-ghost">See the Case Study</a>
+<!-- HERO -->
+<section class="hero" style="background-image:url('assets/hero-photo.jpg');">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <span class="eyebrow">🫧 Serving Greater Portland, Maine</span>
+      <h1>Foamy Fun for <span class="gold-text">Everyone!</span><br><span class="h1-sub">The newest, most unique party in Maine.</span></h1>
+      <p class="lede">A professional foam cannon delivers safe, hypoallergenic, biodegradable foam &mdash; for birthdays, block parties, day care centers, and school events across Greater Portland.</p>
+      <div class="hero-cta-row">
+        <a href="contact.html" class="btn btn-primary">Book Your Party <span class="bubble" aria-hidden="true"></span></a>
+        <a href="pricing.html" class="btn btn-outline">See Pricing</a>
+      </div>
+      <div class="trust-row">
+        <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#FFD24C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#FFD24C" stroke-width="2"/></svg> All ages welcome</span>
+        <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#FFD24C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#FFD24C" stroke-width="2"/></svg> No deposit required</span>
+        <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#FFD24C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#FFD24C" stroke-width="2"/></svg> Locally owned &amp; operated</span>
       </div>
     </div>
-    <div class="hero-visual">
-      <img src="assets/hero.svg" alt="An MSP relationship being assessed against a scorecard of business needs">
+  </div>
+  <div class="mascot-badge">
+    <img src="assets/Mascot_web.png" alt="Maine Foam Parties mascot moose">
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="strip">
+  <div class="container strip-grid">
+    <div class="strip-item">
+      <span class="num">20&#215;20 ft</span>
+      <span class="label">Minimum space needed in your yard</span>
+    </div>
+    <div class="strip-item">
+      <span class="num">1&ndash;2 hrs</span>
+      <span class="label">Standard foam party duration</span>
+    </div>
+    <div class="strip-item">
+      <span class="num">100%</span>
+      <span class="label">Non-toxic, hypoallergenic solution</span>
     </div>
   </div>
 </section>
 
-<section class="contrast-strip">
-  <div class="wrap">
-    <div class="contrast-col them">
-      <h3>A Managed Service Provider</h3>
-      <ul>
-        <li>Recommends the products they resell — at their markup</li>
-        <li>Profits by managing more and more of your IT</li>
-        <li>Builds your environment so you stay dependent on them</li>
-        <li>Their "free audit" is a pitch to win your account</li>
-      </ul>
+<!-- HOW IT WORKS (3 steps — not a repeat of the FAQ, just the booking flow) -->
+<section class="section-pad">
+<div class="bubble-decor size-md pos-tl">
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <circle cx="138.1" cy="198.1" r="35.9" fill="rgba(240,247,252,0.50)" stroke="rgba(79,168,240,0.4)" stroke-width="1.30"/>
+  <circle cx="216.7" cy="208.9" r="35.1" fill="rgba(255,255,255,0.61)" stroke="rgba(13,59,102,0.3)" stroke-width="1.49"/>
+  <circle cx="229.8" cy="149.7" r="28.8" fill="rgba(255,255,255,0.47)" stroke="rgba(79,168,240,0.4)" stroke-width="1.46"/>
+  <circle cx="146.9" cy="140.1" r="21.8" fill="rgba(255,255,255,0.68)" stroke="rgba(13,59,102,0.3)" stroke-width="1.63"/>
+  <circle cx="132.2" cy="232.4" r="16.6" fill="rgba(255,255,255,0.57)" stroke="rgba(79,168,240,0.4)" stroke-width="1.25"/>
+  <circle cx="91.9" cy="147.9" r="16.4" fill="rgba(240,247,252,0.46)" stroke="rgba(13,59,102,0.35)" stroke-width="1.23"/>
+  <circle cx="170.9" cy="238.1" r="16.0" fill="rgba(255,255,255,0.72)" stroke="rgba(79,168,240,0.4)" stroke-width="1.69"/>
+  <circle cx="200.6" cy="125.0" r="15.4" fill="rgba(240,247,252,0.71)" stroke="rgba(79,168,240,0.4)" stroke-width="1.58"/>
+  <circle cx="153.5" cy="168.0" r="15.4" fill="rgba(240,247,252,0.74)" stroke="rgba(13,59,102,0.35)" stroke-width="1.32"/>
+  <circle cx="68.4" cy="128.1" r="14.0" fill="rgba(240,247,252,0.64)" stroke="rgba(13,59,102,0.3)" stroke-width="1.64"/>
+  <circle cx="99.3" cy="186.7" r="13.2" fill="rgba(255,255,255,0.73)" stroke="rgba(13,59,102,0.3)" stroke-width="1.62"/>
+  <circle cx="181.1" cy="146.0" r="13.2" fill="rgba(240,247,252,0.60)" stroke="rgba(79,168,240,0.4)" stroke-width="1.10"/>
+  <circle cx="201.8" cy="164.9" r="13.0" fill="rgba(255,255,255,0.51)" stroke="rgba(79,168,240,0.4)" stroke-width="1.35"/>
+  <circle cx="40.6" cy="144.6" r="12.9" fill="rgba(255,255,255,0.79)" stroke="rgba(13,59,102,0.3)" stroke-width="1.62"/>
+  <circle cx="179.9" cy="209.8" r="12.7" fill="rgba(255,255,255,0.73)" stroke="rgba(79,168,240,0.4)" stroke-width="1.47"/>
+  <circle cx="38.8" cy="163.9" r="11.9" fill="rgba(255,255,255,0.67)" stroke="rgba(79,168,240,0.4)" stroke-width="1.34"/>
+  <circle cx="113.7" cy="133.9" r="11.9" fill="rgba(255,255,255,0.79)" stroke="rgba(13,59,102,0.3)" stroke-width="1.17"/>
+  <circle cx="75.3" cy="161.9" r="11.9" fill="rgba(255,255,255,0.61)" stroke="rgba(13,59,102,0.3)" stroke-width="1.51"/>
+  <circle cx="88.5" cy="173.1" r="11.4" fill="rgba(240,247,252,0.57)" stroke="rgba(13,59,102,0.35)" stroke-width="1.43"/>
+  <circle cx="106.9" cy="206.0" r="11.4" fill="rgba(240,247,252,0.50)" stroke="rgba(13,59,102,0.3)" stroke-width="1.57"/>
+  <circle cx="123.0" cy="163.0" r="10.9" fill="rgba(240,247,252,0.49)" stroke="rgba(13,59,102,0.3)" stroke-width="1.33"/>
+  <circle cx="60.7" cy="166.5" r="10.9" fill="rgba(255,255,255,0.73)" stroke="rgba(79,168,240,0.4)" stroke-width="1.27"/>
+  <circle cx="181.9" cy="187.0" r="10.7" fill="rgba(240,247,252,0.74)" stroke="rgba(13,59,102,0.35)" stroke-width="1.53"/>
+  <circle cx="63.0" cy="145.4" r="10.1" fill="rgba(240,247,252,0.47)" stroke="rgba(13,59,102,0.35)" stroke-width="1.17"/>
+  <circle cx="200.9" cy="179.4" r="10.1" fill="rgba(255,255,255,0.64)" stroke="rgba(13,59,102,0.3)" stroke-width="1.17"/>
+  <circle cx="183.8" cy="161.1" r="10.0" fill="rgba(255,255,255,0.77)" stroke="rgba(13,59,102,0.3)" stroke-width="1.41"/>
+  <circle cx="113.8" cy="216.5" r="8.6" fill="rgba(240,247,252,0.47)" stroke="rgba(79,168,240,0.4)" stroke-width="1.10"/>
+  <circle cx="166.4" cy="135.0" r="8.2" fill="rgba(240,247,252,0.74)" stroke="rgba(13,59,102,0.3)" stroke-width="1.18"/>
+  <circle cx="215.4" cy="119.7" r="8.0" fill="rgba(255,255,255,0.60)" stroke="rgba(79,168,240,0.4)" stroke-width="1.40"/>
+  <circle cx="169.9" cy="161.0" r="7.4" fill="rgba(240,247,252,0.67)" stroke="rgba(13,59,102,0.35)" stroke-width="1.54"/>
+  <circle cx="206.0" cy="151.7" r="7.3" fill="rgba(255,255,255,0.60)" stroke="rgba(13,59,102,0.3)" stroke-width="1.21"/>
+  <circle cx="90.7" cy="122.5" r="6.6" fill="rgba(255,255,255,0.69)" stroke="rgba(79,168,240,0.4)" stroke-width="1.19"/>
+  <circle cx="194.7" cy="140.3" r="6.6" fill="rgba(255,255,255,0.66)" stroke="rgba(13,59,102,0.35)" stroke-width="1.21"/>
+  <circle cx="54.8" cy="124.1" r="6.5" fill="rgba(255,255,255,0.59)" stroke="rgba(13,59,102,0.35)" stroke-width="1.13"/>
+  <ellipse cx="124.4" cy="183.0" rx="8.6" ry="4.7" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="203.4" cy="194.2" rx="8.4" ry="4.6" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="218.8" cy="137.6" rx="6.9" ry="3.8" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="138.6" cy="131.0" rx="5.2" ry="2.9" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="125.9" cy="225.5" rx="4.0" ry="2.2" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="85.7" cy="141.0" rx="3.9" ry="2.2" fill="rgba(255,255,255,0.85)"/>
+</svg>
+</div>
+<div class="bubble-decor size-sm pos-br delay-2">
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <circle cx="131.2" cy="184.9" r="32.4" fill="rgba(255,255,255,0.79)" stroke="rgba(79,168,240,0.4)" stroke-width="1.58"/>
+  <circle cx="69.4" cy="121.7" r="31.2" fill="rgba(240,247,252,0.58)" stroke="rgba(13,59,102,0.35)" stroke-width="1.43"/>
+  <circle cx="253.1" cy="141.3" r="30.3" fill="rgba(255,255,255,0.77)" stroke="rgba(13,59,102,0.3)" stroke-width="1.68"/>
+  <circle cx="183.6" cy="242.1" r="29.7" fill="rgba(255,255,255,0.60)" stroke="rgba(79,168,240,0.4)" stroke-width="1.56"/>
+  <circle cx="168.7" cy="129.0" r="29.7" fill="rgba(255,255,255,0.58)" stroke="rgba(79,168,240,0.4)" stroke-width="1.51"/>
+  <circle cx="60.4" cy="80.6" r="28.1" fill="rgba(240,247,252,0.67)" stroke="rgba(13,59,102,0.3)" stroke-width="1.51"/>
+  <circle cx="121.1" cy="60.6" r="27.7" fill="rgba(255,255,255,0.62)" stroke="rgba(79,168,240,0.4)" stroke-width="1.12"/>
+  <circle cx="160.8" cy="288.4" r="26.0" fill="rgba(255,255,255,0.59)" stroke="rgba(13,59,102,0.35)" stroke-width="1.22"/>
+  <circle cx="198.3" cy="109.2" r="25.3" fill="rgba(255,255,255,0.59)" stroke="rgba(13,59,102,0.3)" stroke-width="1.47"/>
+  <circle cx="179.5" cy="161.6" r="22.7" fill="rgba(255,255,255,0.73)" stroke="rgba(79,168,240,0.4)" stroke-width="1.55"/>
+  <circle cx="258.2" cy="205.9" r="22.5" fill="rgba(255,255,255,0.52)" stroke="rgba(13,59,102,0.3)" stroke-width="1.18"/>
+  <circle cx="223.5" cy="92.0" r="22.2" fill="rgba(255,255,255,0.57)" stroke="rgba(13,59,102,0.3)" stroke-width="1.52"/>
+  <circle cx="96.2" cy="184.8" r="19.8" fill="rgba(255,255,255,0.58)" stroke="rgba(13,59,102,0.3)" stroke-width="1.54"/>
+  <circle cx="221.8" cy="171.3" r="19.7" fill="rgba(240,247,252,0.55)" stroke="rgba(13,59,102,0.35)" stroke-width="1.56"/>
+  <circle cx="172.8" cy="207.9" r="17.8" fill="rgba(255,255,255,0.62)" stroke="rgba(79,168,240,0.4)" stroke-width="1.13"/>
+  <circle cx="68.2" cy="11.6" r="17.7" fill="rgba(255,255,255,0.67)" stroke="rgba(79,168,240,0.4)" stroke-width="1.60"/>
+  <circle cx="126.2" cy="111.8" r="17.2" fill="rgba(240,247,252,0.57)" stroke="rgba(13,59,102,0.35)" stroke-width="1.62"/>
+  <circle cx="232.0" cy="233.2" r="15.4" fill="rgba(255,255,255,0.71)" stroke="rgba(79,168,240,0.4)" stroke-width="1.14"/>
+  <circle cx="123.6" cy="249.6" r="14.2" fill="rgba(240,247,252,0.72)" stroke="rgba(13,59,102,0.3)" stroke-width="1.17"/>
+  <circle cx="159.2" cy="172.4" r="11.9" fill="rgba(240,247,252,0.68)" stroke="rgba(13,59,102,0.35)" stroke-width="1.35"/>
+  <circle cx="155.0" cy="253.3" r="11.9" fill="rgba(255,255,255,0.72)" stroke="rgba(13,59,102,0.3)" stroke-width="1.38"/>
+  <circle cx="131.4" cy="132.4" r="11.1" fill="rgba(255,255,255,0.71)" stroke="rgba(13,59,102,0.35)" stroke-width="1.56"/>
+  <circle cx="91.8" cy="87.1" r="11.0" fill="rgba(255,255,255,0.53)" stroke="rgba(13,59,102,0.3)" stroke-width="1.16"/>
+  <circle cx="153.1" cy="65.2" r="10.5" fill="rgba(255,255,255,0.52)" stroke="rgba(13,59,102,0.3)" stroke-width="1.63"/>
+  <circle cx="105.4" cy="144.6" r="10.5" fill="rgba(255,255,255,0.80)" stroke="rgba(13,59,102,0.35)" stroke-width="1.34"/>
+  <circle cx="79.3" cy="27.8" r="10.4" fill="rgba(255,255,255,0.54)" stroke="rgba(13,59,102,0.3)" stroke-width="1.10"/>
+  <circle cx="197.2" cy="137.4" r="9.9" fill="rgba(255,255,255,0.65)" stroke="rgba(79,168,240,0.4)" stroke-width="1.30"/>
+  <circle cx="141.2" cy="43.9" r="9.6" fill="rgba(255,255,255,0.72)" stroke="rgba(13,59,102,0.35)" stroke-width="1.18"/>
+  <circle cx="135.1" cy="231.3" r="9.6" fill="rgba(255,255,255,0.77)" stroke="rgba(79,168,240,0.4)" stroke-width="1.65"/>
+  <circle cx="267.6" cy="187.4" r="9.0" fill="rgba(255,255,255,0.62)" stroke="rgba(13,59,102,0.3)" stroke-width="1.59"/>
+  <circle cx="271.1" cy="120.2" r="7.8" fill="rgba(255,255,255,0.47)" stroke="rgba(13,59,102,0.35)" stroke-width="1.31"/>
+  <circle cx="156.4" cy="199.0" r="7.3" fill="rgba(255,255,255,0.53)" stroke="rgba(79,168,240,0.4)" stroke-width="1.51"/>
+  <ellipse cx="118.9" cy="171.3" rx="7.8" ry="4.3" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="57.5" cy="108.6" rx="7.5" ry="4.1" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="241.5" cy="128.6" rx="7.3" ry="4.0" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="172.3" cy="229.6" rx="7.1" ry="3.9" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="157.4" cy="116.6" rx="7.1" ry="3.9" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="49.7" cy="68.8" rx="6.7" ry="3.7" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="110.6" cy="48.9" rx="6.7" ry="3.7" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="150.9" cy="277.4" rx="6.2" ry="3.4" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="188.6" cy="98.6" rx="6.1" ry="3.3" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="170.9" cy="152.1" rx="5.4" ry="3.0" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="249.6" cy="196.4" rx="5.4" ry="3.0" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="215.1" cy="82.7" rx="5.3" ry="2.9" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="88.7" cy="176.5" rx="4.7" ry="2.6" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="214.3" cy="163.0" rx="4.7" ry="2.6" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="166.1" cy="200.4" rx="4.3" ry="2.4" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="61.5" cy="4.2" rx="4.2" ry="2.3" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="119.6" cy="104.6" rx="4.1" ry="2.3" fill="rgba(255,255,255,0.85)"/>
+</svg>
+</div>
+
+  <div class="container">
+    <div style="text-align:center; max-width:640px; margin:0 auto 50px;" data-reveal>
+      <span class="eyebrow">How it works</span>
+      <h2>Simple to book. Even easier to enjoy.</h2>
+      <p style="color:#52708A;">Three steps and you're up to your knees in foam. Questions about space, safety, or cleanup? The full answers live on our <a href="faq.html" style="color:var(--navy); font-weight:700; text-decoration:underline;">Foam FAQ</a> page.</p>
     </div>
-    <div class="contrast-col us">
-      <h3>VeriTech Advisors</h3>
-      <ul>
-        <li>Recommends what fits your business — you buy direct from the vendor</li>
-        <li>Takes no commissions and sells no products</li>
-        <li>Builds capability so you're never locked in</li>
-        <li>A flat-fee review that serves you, not a sales funnel</li>
-      </ul>
+    <div class="steps-grid" data-reveal>
+      <div class="info-card">
+        <div class="icon-wrap"><span style="font-family:var(--font-display); font-weight:800; color:var(--navy); font-size:1.3rem;">1</span></div>
+        <h3>Pick your date</h3>
+        <p>Send us your event date and location through the contact form and we'll confirm availability and pricing.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon-wrap"><span style="font-family:var(--font-display); font-weight:800; color:var(--navy); font-size:1.3rem;">2</span></div>
+        <h3>We roll in &amp; set up</h3>
+        <p>We arrive early, hook up to your outlet and hose, and have the cannon ready before guests show up.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon-wrap"><span style="font-family:var(--font-display); font-weight:800; color:var(--navy); font-size:1.3rem;">3</span></div>
+        <h3>The foam flies</h3>
+        <p>1&ndash;2 hours of continuous foam, then we handle teardown while it naturally breaks down.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap center">
-    <span class="eyebrow">Why businesses call us</span>
-    <h2 class="section-title">Know whether your IT actually fits.</h2>
-    <p class="section-lead">Most small businesses signed with an MSP because they didn't know how to manage IT themselves — and have no way to know, years later, whether that arrangement still serves them. We give you that answer.</p>
-    <div class="props">
-      <div class="prop reveal"><div class="num">01</div><h3>Clarity first</h3><p>Understand what you're actually getting — and where the gaps are — in plain language.</p></div>
-      <div class="prop reveal"><div class="num">02</div><h3>The right fit</h3><p>Tools and coverage matched to your business, not a one-size-fits-all provider stack.</p></div>
-      <div class="prop reveal"><div class="num">03</div><h3>Real control</h3><p>Own your own environment, your documentation, and your decisions — never locked in.</p></div>
-      <div class="prop reveal"><div class="num">04</div><h3>Real savings</h3><p>Right-sizing the scope and bringing routine work in-house often cuts IT spend by half or more.</p></div>
+<!-- GALLERY (photo placeholders) -->
+<section class="section-pad-sm" style="background:var(--foam);">
+<div class="bubble-decor size-md pos-tr delay-1">
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <circle cx="77.5" cy="72.3" r="33.3" fill="rgba(255,255,255,0.49)" stroke="rgba(13,59,102,0.35)" stroke-width="1.25"/>
+  <circle cx="237.0" cy="197.3" r="30.4" fill="rgba(255,255,255,0.71)" stroke="rgba(13,59,102,0.3)" stroke-width="1.27"/>
+  <circle cx="194.7" cy="152.2" r="30.1" fill="rgba(255,255,255,0.75)" stroke="rgba(13,59,102,0.3)" stroke-width="1.44"/>
+  <circle cx="135.5" cy="167.7" r="29.5" fill="rgba(240,247,252,0.73)" stroke="rgba(13,59,102,0.35)" stroke-width="1.17"/>
+  <circle cx="123.4" cy="239.1" r="28.3" fill="rgba(255,255,255,0.68)" stroke="rgba(79,168,240,0.4)" stroke-width="1.40"/>
+  <circle cx="157.3" cy="31.1" r="27.0" fill="rgba(255,255,255,0.57)" stroke="rgba(13,59,102,0.35)" stroke-width="1.56"/>
+  <circle cx="114.3" cy="138.6" r="26.1" fill="rgba(255,255,255,0.80)" stroke="rgba(13,59,102,0.35)" stroke-width="1.57"/>
+  <circle cx="97.5" cy="11.5" r="21.3" fill="rgba(240,247,252,0.66)" stroke="rgba(13,59,102,0.35)" stroke-width="1.51"/>
+  <circle cx="184.6" cy="111.8" r="21.2" fill="rgba(255,255,255,0.70)" stroke="rgba(79,168,240,0.4)" stroke-width="1.22"/>
+  <circle cx="154.9" cy="87.7" r="20.5" fill="rgba(240,247,252,0.78)" stroke="rgba(13,59,102,0.3)" stroke-width="1.50"/>
+  <circle cx="209.4" cy="215.8" r="20.3" fill="rgba(255,255,255,0.60)" stroke="rgba(13,59,102,0.35)" stroke-width="1.37"/>
+  <circle cx="173.5" cy="213.5" r="18.0" fill="rgba(255,255,255,0.51)" stroke="rgba(79,168,240,0.4)" stroke-width="1.11"/>
+  <circle cx="120.6" cy="99.9" r="17.6" fill="rgba(240,247,252,0.72)" stroke="rgba(13,59,102,0.35)" stroke-width="1.14"/>
+  <circle cx="188.5" cy="66.1" r="17.5" fill="rgba(240,247,252,0.47)" stroke="rgba(13,59,102,0.3)" stroke-width="1.12"/>
+  <circle cx="152.6" cy="212.2" r="14.1" fill="rgba(255,255,255,0.71)" stroke="rgba(13,59,102,0.3)" stroke-width="1.61"/>
+  <circle cx="171.9" cy="169.1" r="13.4" fill="rgba(255,255,255,0.56)" stroke="rgba(13,59,102,0.35)" stroke-width="1.17"/>
+  <circle cx="84.0" cy="111.9" r="12.9" fill="rgba(240,247,252,0.66)" stroke="rgba(13,59,102,0.35)" stroke-width="1.20"/>
+  <circle cx="184.9" cy="196.6" r="12.4" fill="rgba(255,255,255,0.63)" stroke="rgba(13,59,102,0.35)" stroke-width="1.21"/>
+  <circle cx="148.5" cy="252.4" r="12.1" fill="rgba(255,255,255,0.79)" stroke="rgba(13,59,102,0.35)" stroke-width="1.30"/>
+  <circle cx="71.8" cy="32.5" r="12.1" fill="rgba(255,255,255,0.67)" stroke="rgba(13,59,102,0.3)" stroke-width="1.57"/>
+  <circle cx="180.1" cy="246.2" r="12.0" fill="rgba(240,247,252,0.67)" stroke="rgba(13,59,102,0.3)" stroke-width="1.12"/>
+  <circle cx="158.4" cy="227.3" r="10.7" fill="rgba(255,255,255,0.76)" stroke="rgba(13,59,102,0.3)" stroke-width="1.35"/>
+  <circle cx="121.2" cy="67.3" r="10.1" fill="rgba(240,247,252,0.73)" stroke="rgba(13,59,102,0.3)" stroke-width="1.62"/>
+  <circle cx="94.1" cy="126.5" r="9.8" fill="rgba(240,247,252,0.59)" stroke="rgba(79,168,240,0.4)" stroke-width="1.69"/>
+  <circle cx="168.2" cy="143.2" r="9.4" fill="rgba(240,247,252,0.65)" stroke="rgba(79,168,240,0.4)" stroke-width="1.24"/>
+  <circle cx="128.3" cy="21.3" r="9.4" fill="rgba(240,247,252,0.67)" stroke="rgba(79,168,240,0.4)" stroke-width="1.50"/>
+  <circle cx="164.3" cy="155.9" r="9.2" fill="rgba(255,255,255,0.52)" stroke="rgba(13,59,102,0.3)" stroke-width="1.15"/>
+  <circle cx="221.6" cy="169.5" r="9.2" fill="rgba(255,255,255,0.66)" stroke="rgba(13,59,102,0.35)" stroke-width="1.65"/>
+  <circle cx="137.8" cy="206.5" r="8.8" fill="rgba(240,247,252,0.64)" stroke="rgba(13,59,102,0.3)" stroke-width="1.57"/>
+  <circle cx="118.5" cy="5.7" r="8.5" fill="rgba(240,247,252,0.49)" stroke="rgba(13,59,102,0.3)" stroke-width="1.51"/>
+  <circle cx="215.4" cy="184.3" r="8.2" fill="rgba(255,255,255,0.54)" stroke="rgba(13,59,102,0.3)" stroke-width="1.37"/>
+  <circle cx="99.3" cy="35.7" r="8.0" fill="rgba(255,255,255,0.75)" stroke="rgba(13,59,102,0.35)" stroke-width="1.33"/>
+  <circle cx="120.4" cy="194.3" r="7.6" fill="rgba(255,255,255,0.66)" stroke="rgba(13,59,102,0.3)" stroke-width="1.41"/>
+  <circle cx="121.1" cy="51.7" r="7.6" fill="rgba(255,255,255,0.60)" stroke="rgba(13,59,102,0.3)" stroke-width="1.15"/>
+  <circle cx="130.5" cy="217.8" r="7.3" fill="rgba(240,247,252,0.69)" stroke="rgba(79,168,240,0.4)" stroke-width="1.62"/>
+  <circle cx="185.0" cy="176.4" r="7.2" fill="rgba(255,255,255,0.49)" stroke="rgba(13,59,102,0.3)" stroke-width="1.29"/>
+  <circle cx="171.2" cy="97.0" r="7.0" fill="rgba(255,255,255,0.75)" stroke="rgba(13,59,102,0.3)" stroke-width="1.68"/>
+  <circle cx="113.6" cy="30.2" r="6.8" fill="rgba(255,255,255,0.73)" stroke="rgba(13,59,102,0.35)" stroke-width="1.13"/>
+  <circle cx="146.0" cy="193.7" r="6.7" fill="rgba(255,255,255,0.56)" stroke="rgba(79,168,240,0.4)" stroke-width="1.13"/>
+  <circle cx="213.9" cy="194.9" r="6.5" fill="rgba(255,255,255,0.56)" stroke="rgba(13,59,102,0.35)" stroke-width="1.68"/>
+  <ellipse cx="64.8" cy="58.3" rx="8.0" ry="4.4" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="225.4" cy="184.6" rx="7.3" ry="4.0" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="183.3" cy="139.5" rx="7.2" ry="4.0" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="124.3" cy="155.3" rx="7.1" ry="3.9" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="112.7" cy="227.2" rx="6.8" ry="3.7" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="147.0" cy="19.7" rx="6.5" ry="3.6" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="104.4" cy="127.7" rx="6.3" ry="3.4" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="89.4" cy="2.5" rx="5.1" ry="2.8" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="176.6" cy="102.9" rx="5.1" ry="2.8" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="147.1" cy="79.1" rx="4.9" ry="2.7" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="201.7" cy="207.3" rx="4.9" ry="2.7" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="166.6" cy="205.9" rx="4.3" ry="2.4" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="113.9" cy="92.5" rx="4.2" ry="2.3" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="181.8" cy="58.7" rx="4.2" ry="2.3" fill="rgba(255,255,255,0.85)"/>
+</svg>
+</div>
+<div class="bubble-decor size-sm pos-bl">
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <circle cx="165.6" cy="162.0" r="31.0" fill="rgba(255,255,255,0.47)" stroke="rgba(79,168,240,0.4)" stroke-width="1.29"/>
+  <circle cx="109.2" cy="97.2" r="30.4" fill="rgba(240,247,252,0.62)" stroke="rgba(79,168,240,0.4)" stroke-width="1.44"/>
+  <circle cx="108.0" cy="206.8" r="28.2" fill="rgba(240,247,252,0.61)" stroke="rgba(13,59,102,0.35)" stroke-width="1.62"/>
+  <circle cx="131.4" cy="149.1" r="27.5" fill="rgba(255,255,255,0.69)" stroke="rgba(13,59,102,0.35)" stroke-width="1.55"/>
+  <circle cx="217.6" cy="116.2" r="26.3" fill="rgba(255,255,255,0.72)" stroke="rgba(79,168,240,0.4)" stroke-width="1.12"/>
+  <circle cx="170.0" cy="223.5" r="25.7" fill="rgba(255,255,255,0.66)" stroke="rgba(79,168,240,0.4)" stroke-width="1.57"/>
+  <circle cx="151.6" cy="84.8" r="24.6" fill="rgba(240,247,252,0.52)" stroke="rgba(13,59,102,0.3)" stroke-width="1.16"/>
+  <circle cx="193.8" cy="90.0" r="23.7" fill="rgba(240,247,252,0.78)" stroke="rgba(13,59,102,0.3)" stroke-width="1.61"/>
+  <circle cx="147.2" cy="256.4" r="21.8" fill="rgba(255,255,255,0.64)" stroke="rgba(79,168,240,0.4)" stroke-width="1.52"/>
+  <circle cx="194.2" cy="179.3" r="21.4" fill="rgba(255,255,255,0.49)" stroke="rgba(13,59,102,0.3)" stroke-width="1.69"/>
+  <circle cx="143.1" cy="194.7" r="17.1" fill="rgba(240,247,252,0.73)" stroke="rgba(79,168,240,0.4)" stroke-width="1.58"/>
+  <circle cx="102.2" cy="131.0" r="16.8" fill="rgba(255,255,255,0.45)" stroke="rgba(13,59,102,0.3)" stroke-width="1.48"/>
+  <circle cx="110.6" cy="174.6" r="15.1" fill="rgba(240,247,252,0.70)" stroke="rgba(79,168,240,0.4)" stroke-width="1.39"/>
+  <circle cx="169.9" cy="120.7" r="14.6" fill="rgba(255,255,255,0.47)" stroke="rgba(13,59,102,0.35)" stroke-width="1.33"/>
+  <circle cx="197.6" cy="212.6" r="14.3" fill="rgba(255,255,255,0.65)" stroke="rgba(79,168,240,0.4)" stroke-width="1.67"/>
+  <circle cx="210.0" cy="163.7" r="13.9" fill="rgba(255,255,255,0.73)" stroke="rgba(13,59,102,0.35)" stroke-width="1.63"/>
+  <circle cx="177.1" cy="190.3" r="11.1" fill="rgba(255,255,255,0.55)" stroke="rgba(13,59,102,0.3)" stroke-width="1.16"/>
+  <circle cx="228.9" cy="141.5" r="11.0" fill="rgba(255,255,255,0.80)" stroke="rgba(13,59,102,0.3)" stroke-width="1.57"/>
+  <circle cx="182.9" cy="108.5" r="10.3" fill="rgba(240,247,252,0.60)" stroke="rgba(13,59,102,0.35)" stroke-width="1.30"/>
+  <circle cx="194.1" cy="152.9" r="9.9" fill="rgba(255,255,255,0.76)" stroke="rgba(13,59,102,0.3)" stroke-width="1.31"/>
+  <circle cx="131.6" cy="181.4" r="9.7" fill="rgba(240,247,252,0.78)" stroke="rgba(79,168,240,0.4)" stroke-width="1.59"/>
+  <circle cx="133.2" cy="228.2" r="9.2" fill="rgba(255,255,255,0.58)" stroke="rgba(13,59,102,0.3)" stroke-width="1.50"/>
+  <circle cx="189.0" cy="137.6" r="8.7" fill="rgba(255,255,255,0.65)" stroke="rgba(79,168,240,0.4)" stroke-width="1.29"/>
+  <circle cx="136.1" cy="120.0" r="8.2" fill="rgba(255,255,255,0.63)" stroke="rgba(79,168,240,0.4)" stroke-width="1.34"/>
+  <circle cx="159.6" cy="200.9" r="8.1" fill="rgba(255,255,255,0.62)" stroke="rgba(13,59,102,0.35)" stroke-width="1.33"/>
+  <circle cx="221.9" cy="155.2" r="7.7" fill="rgba(240,247,252,0.57)" stroke="rgba(13,59,102,0.3)" stroke-width="1.17"/>
+  <circle cx="149.3" cy="217.3" r="7.6" fill="rgba(255,255,255,0.54)" stroke="rgba(79,168,240,0.4)" stroke-width="1.45"/>
+  <circle cx="152.6" cy="123.3" r="7.4" fill="rgba(255,255,255,0.67)" stroke="rgba(79,168,240,0.4)" stroke-width="1.14"/>
+  <circle cx="124.2" cy="243.2" r="7.4" fill="rgba(255,255,255,0.65)" stroke="rgba(13,59,102,0.3)" stroke-width="1.19"/>
+  <circle cx="197.8" cy="123.9" r="7.1" fill="rgba(255,255,255,0.70)" stroke="rgba(13,59,102,0.3)" stroke-width="1.24"/>
+  <ellipse cx="153.8" cy="149.0" rx="7.4" ry="4.1" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="97.7" cy="84.4" rx="7.3" ry="4.0" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="97.3" cy="194.9" rx="6.8" ry="3.7" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="120.9" cy="137.5" rx="6.6" ry="3.6" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="207.6" cy="105.2" rx="6.3" ry="3.5" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="160.2" cy="212.7" rx="6.2" ry="3.4" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="142.3" cy="74.5" rx="5.9" ry="3.2" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="184.8" cy="80.0" rx="5.7" ry="3.1" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="138.9" cy="247.2" rx="5.2" ry="2.9" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="186.1" cy="170.4" rx="5.1" ry="2.8" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="136.6" cy="187.5" rx="4.1" ry="2.3" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="95.8" cy="124.0" rx="4.0" ry="2.2" fill="rgba(255,255,255,0.85)"/>
+</svg>
+</div>
+
+  <div class="container">
+    <div style="text-align:center; max-width:640px; margin:0 auto 40px;" data-reveal>
+      <span class="eyebrow">From real parties</span>
+      <h2>Foam in the wild</h2>
+      <p style="color:#52708A;">This is what the fun actually looks like once the foam starts flying.</p>
+    </div>
+    <div class="gallery-grid" data-reveal>
+      <div class="gallery-photo"><img src="assets/gallery-1.jpg" alt="Kids laughing and playing in a foam party" loading="lazy"></div>
+      <div class="gallery-photo"><img src="assets/gallery-2.jpg" alt="Guest covered head to toe in party foam" loading="lazy"></div>
+      <div class="gallery-photo"><img src="assets/gallery-3.jpg" alt="Group of kids jumping and celebrating in foam outdoors" loading="lazy"></div>
     </div>
   </div>
 </section>
 
-<section class="section" style="background:var(--sand-deep);">
-  <div class="wrap center">
-    <span class="eyebrow">How it works</span>
-    <h2 class="section-title">Review. Refine. Rebuild.</h2>
-    <p class="section-lead">A clear path from <em>not knowing whether your IT setup actually serves you</em> to <em>running an operation that fits your business.</em> Not everyone needs all three — you go as far as your business actually requires, and we tell you honestly when you don't need the next step.</p>
-    <div class="process-grid">
-      <div class="step reveal">
-        <div class="step-mark">1</div>
-        <h3>Review</h3>
-        <p>A third-party assessment of what your MSP is actually delivering — scope, security, backups, licensing, documentation, and cost. A plain-language report on where the gaps are against your business's real needs.</p>
+
+<!-- PRICING TEASER (slim — full detail lives on the Pricing page) -->
+<section class="section-pad-sm" style="background:var(--navy); color:var(--white);">
+  <div class="foam-field" data-count="10"></div>
+  <div class="container">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;" data-reveal>
+      <div>
+        <span class="eyebrow" style="background:rgba(255,255,255,0.12); color:var(--gold-1);">Pricing</span>
+        <h2 style="color:var(--white); margin-bottom:6px;">Foam parties start at just $375</h2>
+        <p style="color:rgba(255,255,255,0.78); margin-bottom:0;">Flat rates, no surprises &mdash; foam cannon, solution, and full setup included.</p>
       </div>
-      <div class="step reveal">
-        <div class="step-mark">2</div>
-        <h3>Refine</h3>
-        <p>Clear recommendations on what to keep, right-size, renegotiate, or bring in-house — and whether to stay with your MSP, change providers, or reduce the relationship.</p>
+      <a href="pricing.html" class="btn btn-primary">See Full Pricing <span class="bubble" aria-hidden="true"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="section-pad-sm">
+  <div class="container">
+    <div class="cta-band" data-reveal>
+      <div>
+        <h2>Ready for some foamy fun?</h2>
+        <p>Check your date and get a quote in minutes.</p>
       </div>
-      <div class="step reveal">
-        <div class="step-mark">3</div>
-        <h3>Rebuild</h3>
-        <p>Optional hands-on modernization — cloud-first migration, proper tooling, and training your team to run the day-to-day. Built so you own it, not so you depend on us.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-navy">Request Your Date</a>
+        <a href="tel:2072138190" class="btn" style="background:var(--navy-deep); color:var(--white);">Call (207) 213-8190</a>
       </div>
     </div>
-    <div style="margin-top:44px;"><a href="services.html" class="btn btn-navy">Explore the full services</a></div>
-  </div>
-</section>
-
-<section class="section indep">
-  <div class="wrap indep-inner">
-    <blockquote>We don't sell you the product that fits our business model. We help you find the <span class="hl">right product for your business.</span></blockquote>
-    <ul class="pledge">
-      <li>We sell no products — you buy direct from the vendor.</li>
-      <li>We take no vendor commissions or reseller margin.</li>
-      <li>Our review fee doesn't change based on what we find.</li>
-      <li>We're not an MSP — and we're not trying to become yours.</li>
-      <li>Everything we produce is yours, to use with anyone.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="who-we-work-with">
-  <div class="wrap center">
-    <span class="eyebrow">Who we work with</span>
-    <h2 class="section-title">Built for growing New England businesses</h2>
-    <p class="section-lead">It's not about headcount. If you rely on an MSP and have no one internally who can independently judge whether it's working, that's the situation we're built for.</p>
-    <div class="fit">
-      <div class="fit-card reveal">
-        <h3>You have an MSP</h3>
-        <p>Maybe for years. Maybe never re-bid. Either way, there's real money moving out the door every month for services you can't fully verify.</p>
-      </div>
-      <div class="fit-card reveal">
-        <h3>No one to check their work</h3>
-        <p>You're too small for an IT department — maybe one generalist, maybe nobody. There's no one internally whose job is to judge whether you're getting a fair deal.</p>
-      </div>
-      <div class="fit-card reveal">
-        <h3>Running on Microsoft 365</h3>
-        <p>We specialize in the Microsoft ecosystem — Entra ID, Intune, Autopilot, and M365 Backup. Bonus if you're still on aging on-prem systems and want a modern, cloud-first setup.</p>
-      </div>
-    </div>
-    <p class="fit-timing reveal">Especially if you're at a turning point — a contract renewal, a price increase, or an open IT leadership seat. Any moment you're already asking <em>"are we getting this right?"</em> is the right time to find out.</p>
-  </div>
-</section>
-
-<section class="section cta-band">
-  <div class="wrap">
-    <h2>Find out if your IT actually fits your business.</h2>
-    <p>A flat-fee, unbiased review — no obligation, no products, no sales funnel. Just an honest answer, whatever that answer turns out to be.</p>
-    <a href="contact.html" class="btn btn-primary">Request a Review</a>
   </div>
 </section>
 
 <footer class="site-footer">
-  <div class="wrap">
+  <div class="foam-field" data-count="14"></div>
+  <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand"><img src="assets/logo-light.png" alt="VeriTech Advisors"></div>
-        <p class="footer-note">Unbiased IT advisory for small and mid-sized businesses. We're not an MSP, we sell no products, and we take no vendor commissions. New England based.</p>
+        <div class="footer-logo"><img src="assets/Logo_web.png" alt="Maine Foam Parties logo"></div>
+        <p style="max-width:280px; font-size:0.92rem;">Maine's outdoor foam party rental company. Safe, biodegradable, foamy fun for birthdays, block parties, and school events across Greater Portland.</p>
       </div>
       <div>
         <h4>Explore</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="case-study.html">Case Study</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="faq.html">Foam FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4>Get started</h4>
+        <h4>Get in touch</h4>
         <ul>
-          <li><a href="contact.html">Request a review</a></li>
-          <li><a href="case-study.html">See the case study</a></li>
+          <li><a href="tel:2072138190">(207) 213-8190</a></li>
+          <li><a href="contact.html">Contact form</a></li>
+          <li><a href="https://www.facebook.com/mainefoamparties" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/mainefoamparties/" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 VeriTech Advisors. All rights reserved.</span>
-      <span>We verify. You decide.</span>
+      <span>&copy; <span id="year"></span> Maine Foam Parties. All rights reserved.</span>
+      <span>Serving Greater Portland, Maine</span>
     </div>
   </div>
 </footer>
 
-<script>
-const io = new IntersectionObserver((es) => {
-  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: .15 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/script.js"></script>
 </body>
 </html>
