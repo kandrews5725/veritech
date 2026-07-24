@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/mark.png">
 <link rel="stylesheet" href="styles.css">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <style>
 .page-hero { background: linear-gradient(160deg, var(--navy), #0f1c31); color: var(--white); padding: 72px 0 80px; text-align: center; }
 .page-hero h1 { color: var(--white); font-size: clamp(2.2rem, 4.5vw, 3.3rem); }
@@ -70,14 +71,14 @@
       <a href="services.html">Services</a>
       <a href="case-study.html">Case Study</a>
       <a href="about.html">About</a>
-      <a href="contact.html" class="nav-cta">Request a Review</a>
+      <a href="contact.html" class="nav-cta">Get a Second Opinion</a>
     </nav>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="wrap">
-    <h1>Request a review</h1>
+    <h1>Get a second opinion</h1>
     <p>Tell us a little about your business and your current MSP relationship. We'll get back to you to talk through whether a review makes sense — no pressure, no obligation.</p>
   </div>
 </section>
@@ -166,6 +167,10 @@
         <!-- Fixed subject line for the notification email -->
         <input type="hidden" name="_subject" value="New inquiry — VeriTech Advisors site">
 
+        <div class="field">
+          <div class="g-recaptcha" data-sitekey="6LdnVGMtAAAAAP9jQOGkt1A9ylX-OpKit4ZnLAo4"></div>
+        </div>
+
         <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;">Send message</button>
       </form>
     </div>
@@ -213,6 +218,15 @@ const submitBtn = document.getElementById('submitBtn');
 contactForm.addEventListener('submit', async function (e) {
   e.preventDefault();
 
+  // Require the reCAPTCHA checkbox to be completed before sending
+  if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse().length === 0) {
+    formMsg.textContent = "Please check the \u201cI'm not a robot\u201d box before sending.";
+    formMsg.classList.remove('show'); // reset in case error class differs
+    formMsg.classList.add('error', 'show');
+    formMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending…';
 
@@ -241,6 +255,11 @@ contactForm.addEventListener('submit', async function (e) {
   } catch (err) {
     formMsg.textContent = "Something went wrong sending your message. Please try again or email us directly at info@veritechadvisors.com.";
     formMsg.classList.add('error', 'show');
+  }
+
+  // v2 checkbox tokens are single-use — reset so the person can try again if needed
+  if (typeof grecaptcha !== 'undefined') {
+    grecaptcha.reset();
   }
 
   formMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
