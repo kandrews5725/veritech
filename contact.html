@@ -71,14 +71,14 @@
       <a href="services.html">Services</a>
       <a href="case-study.html">Case Study</a>
       <a href="about.html">About</a>
-      <a href="contact.html" class="nav-cta">Get a Second Opinion</a>
+      <a href="contact.html" class="nav-cta">Request a Review</a>
     </nav>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="wrap">
-    <h1>Get a second opinion</h1>
+    <h1>Request a review</h1>
     <p>Tell us a little about your business and your current MSP relationship. We'll get back to you to talk through whether a review makes sense — no pressure, no obligation.</p>
   </div>
 </section>
@@ -221,7 +221,6 @@ contactForm.addEventListener('submit', async function (e) {
   // Require the reCAPTCHA checkbox to be completed before sending
   if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse().length === 0) {
     formMsg.textContent = "Please check the \u201cI'm not a robot\u201d box before sending.";
-    formMsg.classList.remove('show'); // reset in case error class differs
     formMsg.classList.add('error', 'show');
     formMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
